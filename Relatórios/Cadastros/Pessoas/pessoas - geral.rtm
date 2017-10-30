@@ -1,0 +1,1569 @@
+object ppReport1: TppReport
+  AutoStop = False
+  DataPipeline = IBXQueryDataView1.plClientes
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Letter 8½ x 11 pol'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  PrinterSetup.PaperSize = 1
+  SaveAsTemplate = True
+  Template.DatabaseSettings.DataPipeline = plItem
+  Template.DatabaseSettings.Name = 'pessoas - geral 2'
+  Template.DatabaseSettings.NameField = 'NAME'
+  Template.DatabaseSettings.TemplateField = 'TEMPLATE'
+  Template.FileName = 'D:\empresa1\Relatórios\Cadastros\Pessoas\pessoas - geral.rtm'
+  Template.Format = ftASCII
+  AfterAutoSearchDialogCreate = ppReport1AfterAutoSearchDialogCreate
+  AllowPrintToArchive = True
+  AllowPrintToFile = True
+  DeviceType = 'Screen'
+  Language = lgPortugueseBrazil
+  OnAutoSearchDialogClose = ppReport1AutoSearchDialogClose
+  OutlineSettings.CreateNode = True
+  OutlineSettings.CreatePageNodes = True
+  OutlineSettings.Enabled = False
+  PreviewFormSettings.WindowState = wsMaximized
+  PreviewFormSettings.ZoomSetting = zsPageWidth
+  SavePrinterSetup = True
+  ShowAutoSearchDialog = True
+  TextFileType = ftFixedLength
+  Left = 320
+  Top = 325
+  Version = '7.0'
+  mmColumnWidth = 0
+  DataPipelineName = 'plClientes'
+  object ppHeaderBand1: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+    object ppShape1: TppShape
+      UserName = 'Shape1'
+      mmHeight = 8467
+      mmLeft = 3175
+      mmTop = 3175
+      mmWidth = 196850
+      BandType = 0
+    end
+    object ppSystemVariable1: TppSystemVariable
+      UserName = 'SystemVariable1'
+      VarType = vtPageNo
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 16
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 6844
+      mmLeft = 194840
+      mmTop = 4233
+      mmWidth = 3598
+      BandType = 0
+    end
+    object ppLabel21: TppLabel
+      UserName = 'Label21'
+      Caption = 'PESSOAS'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 16
+      Font.Style = []
+      Transparent = True
+      mmHeight = 6844
+      mmLeft = 4498
+      mmTop = 4233
+      mmWidth = 26952
+      BandType = 0
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 46831
+    mmPrintPosition = 0
+    object ppLabel3: TppLabel
+      UserName = 'Label3'
+      Caption = 'Nome'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 16933
+      mmTop = 3175
+      mmWidth = 8255
+      BandType = 4
+    end
+    object ppDBText1: TppDBText
+      UserName = 'DBText1'
+      DataField = 'NOME'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 16933
+      mmTop = 7144
+      mmWidth = 81227
+      BandType = 4
+    end
+    object ppLabel4: TppLabel
+      UserName = 'Label4'
+      Caption = 'Código'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 3175
+      mmTop = 3175
+      mmWidth = 9666
+      BandType = 4
+    end
+    object ppDBText2: TppDBText
+      UserName = 'DBText2'
+      DataField = 'CODIGO'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 3175
+      mmTop = 7144
+      mmWidth = 12435
+      BandType = 4
+    end
+    object ppDBText3: TppDBText
+      UserName = 'DBText3'
+      DataField = 'RAZAOSOCIAL'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 101336
+      mmTop = 7144
+      mmWidth = 92340
+      BandType = 4
+    end
+    object ppLabel5: TppLabel
+      UserName = 'Label5'
+      Caption = 'Razão Social'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 101336
+      mmTop = 3175
+      mmWidth = 17851
+      BandType = 4
+    end
+    object ppLabel6: TppLabel
+      UserName = 'Label6'
+      Caption = 'Logradouro'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 16933
+      mmTop = 12171
+      mmWidth = 16016
+      BandType = 4
+    end
+    object ppDBText4: TppDBText
+      UserName = 'DBText4'
+      DataField = 'LOGRADOURO'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 16933
+      mmTop = 16140
+      mmWidth = 81227
+      BandType = 4
+    end
+    object ppLabel7: TppLabel
+      UserName = 'Label7'
+      Caption = 'Número'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 101336
+      mmTop = 12171
+      mmWidth = 11218
+      BandType = 4
+    end
+    object ppDBText5: TppDBText
+      UserName = 'DBText5'
+      DataField = 'NUMERO'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 101336
+      mmTop = 16140
+      mmWidth = 12435
+      BandType = 4
+    end
+    object ppLabel8: TppLabel
+      UserName = 'Label8'
+      Caption = 'Complemento'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 116946
+      mmTop = 12171
+      mmWidth = 19685
+      BandType = 4
+    end
+    object ppDBText6: TppDBText
+      UserName = 'DBText6'
+      DataField = 'COMPLEMENTO'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 116946
+      mmTop = 16140
+      mmWidth = 76729
+      BandType = 4
+    end
+    object ppLabel9: TppLabel
+      UserName = 'Label9'
+      Caption = 'Bairro'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 16933
+      mmTop = 21167
+      mmWidth = 8467
+      BandType = 4
+    end
+    object ppDBText7: TppDBText
+      UserName = 'DBText7'
+      DataField = 'BAIRRO'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 16933
+      mmTop = 25135
+      mmWidth = 65617
+      BandType = 4
+    end
+    object ppLabel10: TppLabel
+      UserName = 'Label10'
+      Caption = 'Cidade'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 84667
+      mmTop = 21167
+      mmWidth = 9666
+      BandType = 4
+    end
+    object ppDBText8: TppDBText
+      UserName = 'DBText8'
+      DataField = 'CIDADE'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 84667
+      mmTop = 25135
+      mmWidth = 65617
+      BandType = 4
+    end
+    object ppLabel11: TppLabel
+      UserName = 'Label11'
+      Caption = 'Estado'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 152665
+      mmTop = 21167
+      mmWidth = 9525
+      BandType = 4
+    end
+    object ppDBText9: TppDBText
+      UserName = 'DBText9'
+      DataField = 'ESTADO'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 152665
+      mmTop = 25135
+      mmWidth = 12435
+      BandType = 4
+    end
+    object ppLabel12: TppLabel
+      UserName = 'Label12'
+      Caption = 'CEP'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 167482
+      mmTop = 21167
+      mmWidth = 5433
+      BandType = 4
+    end
+    object ppDBText10: TppDBText
+      UserName = 'DBText10'
+      DataField = 'CEP'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 167482
+      mmTop = 25135
+      mmWidth = 25929
+      BandType = 4
+    end
+    object ppLabel13: TppLabel
+      UserName = 'Label13'
+      Caption = 'RG'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 16933
+      mmTop = 30163
+      mmWidth = 4163
+      BandType = 4
+    end
+    object ppDBText11: TppDBText
+      UserName = 'DBText11'
+      DataField = 'RG'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 16933
+      mmTop = 34131
+      mmWidth = 43392
+      BandType = 4
+    end
+    object ppLabel14: TppLabel
+      UserName = 'Label14'
+      Caption = 'CPF'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 62706
+      mmTop = 29898
+      mmWidth = 5292
+      BandType = 4
+    end
+    object ppDBText12: TppDBText
+      UserName = 'DBText12'
+      DataField = 'CPF'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 62706
+      mmTop = 33867
+      mmWidth = 43392
+      BandType = 4
+    end
+    object ppLabel15: TppLabel
+      UserName = 'Label15'
+      Caption = 'CNPJ'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 108479
+      mmTop = 29898
+      mmWidth = 7056
+      BandType = 4
+    end
+    object ppDBText13: TppDBText
+      UserName = 'DBText13'
+      DataField = 'CGC'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 108479
+      mmTop = 33867
+      mmWidth = 41804
+      BandType = 4
+    end
+    object ppLabel16: TppLabel
+      UserName = 'Label16'
+      Caption = 'Inscrição Estadual'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 152665
+      mmTop = 29898
+      mmWidth = 25823
+      BandType = 4
+    end
+    object ppDBText14: TppDBText
+      UserName = 'DBText14'
+      DataField = 'IE'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 152665
+      mmTop = 33867
+      mmWidth = 40746
+      BandType = 4
+    end
+    object ppLabel17: TppLabel
+      UserName = 'Label17'
+      Caption = 'Fone'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 16933
+      mmTop = 39158
+      mmWidth = 6773
+      BandType = 4
+    end
+    object ppDBText15: TppDBText
+      UserName = 'DBText15'
+      DataField = 'FONE'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 16933
+      mmTop = 43127
+      mmWidth = 31485
+      BandType = 4
+    end
+    object ppLabel18: TppLabel
+      UserName = 'Label18'
+      Caption = 'FAX'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 50800
+      mmTop = 38894
+      mmWidth = 5433
+      BandType = 4
+    end
+    object ppDBText16: TppDBText
+      UserName = 'DBText16'
+      DataField = 'FAX'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 50800
+      mmTop = 42863
+      mmWidth = 31485
+      BandType = 4
+    end
+    object ppLabel19: TppLabel
+      UserName = 'Label19'
+      Caption = 'Celular'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 85196
+      mmTop = 38894
+      mmWidth = 9878
+      BandType = 4
+    end
+    object ppDBText17: TppDBText
+      UserName = 'DBText17'
+      DataField = 'CELULAR'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 85196
+      mmTop = 42863
+      mmWidth = 31485
+      BandType = 4
+    end
+    object ppLabel20: TppLabel
+      UserName = 'Label20'
+      Caption = 'e-mail'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsItalic]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 119592
+      mmTop = 38894
+      mmWidth = 8961
+      BandType = 4
+    end
+    object ppDBText18: TppDBText
+      UserName = 'DBText18'
+      DataField = 'EMAIL'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plClientes'
+      mmHeight = 3387
+      mmLeft = 119592
+      mmTop = 42863
+      mmWidth = 73554
+      BandType = 4
+    end
+  end
+  object ppFooterBand1: TppFooterBand
+    mmBottomOffset = 0
+    mmHeight = 7673
+    mmPrintPosition = 0
+    object ppShape2: TppShape
+      UserName = 'Shape2'
+      mmHeight = 4498
+      mmLeft = 3175
+      mmTop = 3175
+      mmWidth = 196850
+      BandType = 8
+    end
+    object ppLabel2: TppLabel
+      UserName = 'Label2'
+      Caption = 'empresa1.com - copyright (c) 1999-2003 Eliéser Morais'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 3969
+      mmTop = 3440
+      mmWidth = 79798
+      BandType = 8
+    end
+    object ppSystemVariable2: TppSystemVariable
+      UserName = 'SystemVariable2'
+      VarType = vtDateTime
+      DisplayFormat = 'dd/mm/yy hh:nn'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 176001
+      mmTop = 3440
+      mmWidth = 22437
+      BandType = 8
+    end
+  end
+  object ppSummaryBand1: TppSummaryBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+    object ppShape3: TppShape
+      UserName = 'Shape3'
+      mmHeight = 8467
+      mmLeft = 3175
+      mmTop = 3175
+      mmWidth = 196850
+      BandType = 7
+    end
+    object ppLabel1: TppLabel
+      UserName = 'Label1'
+      Caption = 'TOTAL LISTADO'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 16
+      Font.Style = []
+      Transparent = True
+      mmHeight = 6844
+      mmLeft = 4498
+      mmTop = 4233
+      mmWidth = 46002
+      BandType = 7
+    end
+    object ppDBCalc1: TppDBCalc
+      UserName = 'DBCalc1'
+      DataField = 'CODIGO'
+      DataPipeline = IBXQueryDataView1.plClientes
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 16
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DBCalcType = dcCount
+      DataPipelineName = 'plClientes'
+      mmHeight = 6844
+      mmLeft = 147109
+      mmTop = 4233
+      mmWidth = 51329
+      BandType = 7
+    end
+  end
+  object daDataModule1: TdaDataModule
+    object IBXQueryDataView1: TdaIBXQueryDataView
+      UserName = 'Query_Clientes'
+      Height = 305
+      Left = 10
+      NameColumnWidth = 105
+      SizeColumnWidth = 35
+      SortMode = 0
+      Top = 10
+      TypeColumnWidth = 52
+      Width = 242
+      AutoSearchTabOrder = 0
+      object plClientes: TppChildDBPipeline
+        AutoCreateFields = False
+        UserName = 'plClientes'
+        object ppField1: TppField
+          FieldAlias = 'Codigo'
+          FieldName = 'CODIGO'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 0
+          TableName = 'CLIENTES_1'
+        end
+        object ppField2: TppField
+          FieldAlias = 'Razaosocial'
+          FieldName = 'RAZAOSOCIAL'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 1
+          TableName = 'CLIENTES_1'
+        end
+        object ppField3: TppField
+          FieldAlias = 'Nome'
+          FieldName = 'NOME'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 2
+          TableName = 'CLIENTES_1'
+        end
+        object ppField4: TppField
+          FieldAlias = 'Datanasc'
+          FieldName = 'DATANASC'
+          FieldLength = 0
+          DataType = dtDateTime
+          DisplayWidth = 0
+          Position = 3
+          TableName = 'CLIENTES_1'
+        end
+        object ppField5: TppField
+          FieldAlias = 'Rg'
+          FieldName = 'RG'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 4
+          TableName = 'CLIENTES_1'
+        end
+        object ppField6: TppField
+          FieldAlias = 'Cpf'
+          FieldName = 'CPF'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 5
+          TableName = 'CLIENTES_1'
+        end
+        object ppField7: TppField
+          FieldAlias = 'Cgc'
+          FieldName = 'CGC'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 6
+          TableName = 'CLIENTES_1'
+        end
+        object ppField8: TppField
+          FieldAlias = 'Ie'
+          FieldName = 'IE'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 7
+          TableName = 'CLIENTES_1'
+        end
+        object ppField9: TppField
+          FieldAlias = 'Logradouro'
+          FieldName = 'LOGRADOURO'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 8
+          TableName = 'LOGRADOUROS_1'
+        end
+        object ppField10: TppField
+          FieldAlias = 'Numero'
+          FieldName = 'NUMERO'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 9
+          TableName = 'CLIENTES_1'
+        end
+        object ppField11: TppField
+          FieldAlias = 'Complemento'
+          FieldName = 'COMPLEMENTO'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 10
+          TableName = 'CLIENTES_1'
+        end
+        object ppField12: TppField
+          FieldAlias = 'Bairro'
+          FieldName = 'BAIRRO'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 11
+          TableName = 'BAIRROS_1'
+        end
+        object ppField13: TppField
+          FieldAlias = 'Cidade'
+          FieldName = 'CIDADE'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 12
+          TableName = 'CIDADES_1'
+        end
+        object ppField14: TppField
+          FieldAlias = 'Estado'
+          FieldName = 'ESTADO'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 13
+          TableName = 'CIDADES_1'
+        end
+        object ppField15: TppField
+          FieldAlias = 'Fone'
+          FieldName = 'FONE'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 14
+          TableName = 'CLIENTES_1'
+        end
+        object ppField16: TppField
+          FieldAlias = 'Fax'
+          FieldName = 'FAX'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 15
+          TableName = 'CLIENTES_1'
+        end
+        object ppField17: TppField
+          FieldAlias = 'Email'
+          FieldName = 'EMAIL'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 16
+          TableName = 'CLIENTES_1'
+        end
+        object ppField18: TppField
+          FieldAlias = 'Celular'
+          FieldName = 'CELULAR'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 17
+          TableName = 'CLIENTES_1'
+        end
+        object ppField19: TppField
+          FieldAlias = 'Datacadast'
+          FieldName = 'DATACADAST'
+          FieldLength = 0
+          DataType = dtDateTime
+          DisplayWidth = 0
+          Position = 18
+          TableName = 'CLIENTES_1'
+        end
+        object ppField20: TppField
+          FieldAlias = 'Contato'
+          FieldName = 'CONTATO'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 19
+          TableName = 'CLIENTES_1'
+        end
+        object ppField21: TppField
+          FieldAlias = 'Cep'
+          FieldName = 'CEP'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 20
+          TableName = 'LOGRADOUROS_1'
+        end
+      end
+      object daSQL1: TdaSQL
+        CollationType = ctASCII
+        DatabaseName = 'Database'
+        DatabaseType = dtInterBase
+        DataPipelineName = 'plClientes'
+        IsCaseSensitive = True
+        LinkColor = clBlack
+        MaxSQLFieldAliasLength = 25
+        SQLText.Strings = (
+          'SELECT CLIENTES_1.CODIGO, CLIENTES_1.RAZAOSOCIAL, '
+          '       CLIENTES_1.NOME, CLIENTES_1.DATANASC, '
+          '       CLIENTES_1.RG, CLIENTES_1.CPF, '
+          '       CLIENTES_1.CGC, CLIENTES_1.IE, '
+          '       LOGRADOUROS_1.LOGRADOURO, '
+          '       CLIENTES_1.NUMERO, CLIENTES_1.COMPLEMENTO, '
+          '       BAIRROS_1.BAIRRO, CIDADES_1.CIDADE, '
+          '       CIDADES_1.ESTADO, CLIENTES_1.FONE, '
+          '       CLIENTES_1.FAX, CLIENTES_1.EMAIL, '
+          '       CLIENTES_1.CELULAR, CLIENTES_1.DATACADAST, '
+          '       CLIENTES_1.CONTATO, LOGRADOUROS_1.CEP'
+          'FROM CLIENTES CLIENTES_1'
+          '      LEFT OUTER JOIN LOGRADOUROS LOGRADOUROS_1 ON '
+          '     (LOGRADOUROS_1.CODIGO = CLIENTES_1.LOCALIZACAO)'
+          '      AND (LOGRADOUROS_1.BAIRRO = CLIENTES_1.BAIRRO)'
+          '      AND (LOGRADOUROS_1.CIDADE = CLIENTES_1.CIDADE)'
+          '      AND (LOGRADOUROS_1.ESTADO = CLIENTES_1.ESTADO)'
+          '      LEFT OUTER JOIN BAIRROS BAIRROS_1 ON '
+          '     (BAIRROS_1.CODIGO = CLIENTES_1.BAIRRO)'
+          '      AND (BAIRROS_1.CIDADE = CLIENTES_1.CIDADE)'
+          '      AND (BAIRROS_1.ESTADO = CLIENTES_1.ESTADO)'
+          '      LEFT OUTER JOIN CIDADES CIDADES_1 ON '
+          '     (CIDADES_1.CODIGO = CLIENTES_1.CIDADE)'
+          '      AND (CIDADES_1.ESTADO = CLIENTES_1.ESTADO)'
+          'WHERE ( CLIENTES_1.NOME LIKE '#39'%'#39' )'
+          '       AND ( CLIENTES_1.TIPO = '#39'C'#39' )'
+          '       AND ( CLIENTES_1.OCULTO = '#39'N'#39' )'
+          'ORDER BY CLIENTES_1.NOME')
+        SQLType = sqSQL2
+        object daCriteria1: TdaCriteria
+          ChildType = 7
+          Level = 0
+          Operator = dacoLike
+          Value = '%'
+          object TdaField
+            Alias = 'Nome'
+            AutoSearch = True
+            DisplayWidth = 0
+            FieldAlias = 'Nome'
+            FieldLength = 0
+            FieldName = 'NOME'
+            TableAlias = 'Clientes'
+            TableName = 'CLIENTES'
+            TableSQLAlias = 'CLIENTES_1'
+          end
+        end
+        object daCriteria2: TdaCriteria
+          ChildType = 7
+          Level = 0
+          Value = 'C'
+          object TdaField
+            Alias = 'Tipo'
+            AutoSearch = True
+            DisplayWidth = 0
+            FieldAlias = 'Tipo'
+            FieldLength = 0
+            FieldName = 'TIPO'
+            TableAlias = 'Clientes'
+            TableName = 'CLIENTES'
+            TableSQLAlias = 'CLIENTES_1'
+          end
+        end
+        object daCriteria3: TdaCriteria
+          ChildType = 7
+          Level = 0
+          Value = 'N'
+          object TdaField
+            Alias = 'OCULTO'
+            AutoSearch = True
+            DisplayWidth = 1
+            FieldAlias = 'OCULTO'
+            FieldLength = 1
+            FieldName = 'OCULTO'
+            SQLFieldName = 'OCULTO'
+            TableAlias = 'Clientes'
+            TableName = 'CLIENTES'
+            TableSQLAlias = 'CLIENTES_1'
+          end
+        end
+        object daField1: TdaField
+          Alias = 'Codigo'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Codigo'
+          FieldLength = 0
+          FieldName = 'CODIGO'
+          SQLFieldName = 'CODIGO'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField2: TdaField
+          Alias = 'Razaosocial'
+          DisplayWidth = 0
+          FieldAlias = 'Razaosocial'
+          FieldLength = 0
+          FieldName = 'RAZAOSOCIAL'
+          SQLFieldName = 'RAZAOSOCIAL'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField3: TdaField
+          Alias = 'Nome'
+          DisplayWidth = 0
+          FieldAlias = 'Nome'
+          FieldLength = 0
+          FieldName = 'NOME'
+          SQLFieldName = 'NOME'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField4: TdaField
+          Alias = 'Datanasc'
+          DataType = dtDateTime
+          DisplayWidth = 0
+          FieldAlias = 'Datanasc'
+          FieldLength = 0
+          FieldName = 'DATANASC'
+          SQLFieldName = 'DATANASC'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField5: TdaField
+          Alias = 'Rg'
+          DisplayWidth = 0
+          FieldAlias = 'Rg'
+          FieldLength = 0
+          FieldName = 'RG'
+          SQLFieldName = 'RG'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField6: TdaField
+          Alias = 'Cpf'
+          DisplayWidth = 0
+          FieldAlias = 'Cpf'
+          FieldLength = 0
+          FieldName = 'CPF'
+          SQLFieldName = 'CPF'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField7: TdaField
+          Alias = 'Cgc'
+          DisplayWidth = 0
+          FieldAlias = 'Cgc'
+          FieldLength = 0
+          FieldName = 'CGC'
+          SQLFieldName = 'CGC'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField8: TdaField
+          Alias = 'Ie'
+          DisplayWidth = 0
+          FieldAlias = 'Ie'
+          FieldLength = 0
+          FieldName = 'IE'
+          SQLFieldName = 'IE'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField9: TdaField
+          Alias = 'Logradouro'
+          DisplayWidth = 0
+          FieldAlias = 'Logradouro'
+          FieldLength = 0
+          FieldName = 'LOGRADOURO'
+          SQLFieldName = 'LOGRADOURO'
+          TableAlias = 'Logradouros'
+          TableName = 'LOGRADOUROS'
+          TableSQLAlias = 'LOGRADOUROS_1'
+        end
+        object daField10: TdaField
+          Alias = 'Numero'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Numero'
+          FieldLength = 0
+          FieldName = 'NUMERO'
+          SQLFieldName = 'NUMERO'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField11: TdaField
+          Alias = 'Complemento'
+          DisplayWidth = 0
+          FieldAlias = 'Complemento'
+          FieldLength = 0
+          FieldName = 'COMPLEMENTO'
+          SQLFieldName = 'COMPLEMENTO'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField12: TdaField
+          Alias = 'Bairro'
+          DisplayWidth = 0
+          FieldAlias = 'Bairro'
+          FieldLength = 0
+          FieldName = 'BAIRRO'
+          SQLFieldName = 'BAIRRO'
+          TableAlias = 'Bairros'
+          TableName = 'BAIRROS'
+          TableSQLAlias = 'BAIRROS_1'
+        end
+        object daField13: TdaField
+          Alias = 'Cidade'
+          DisplayWidth = 0
+          FieldAlias = 'Cidade'
+          FieldLength = 0
+          FieldName = 'CIDADE'
+          SQLFieldName = 'CIDADE'
+          TableAlias = 'Cidades'
+          TableName = 'CIDADES'
+          TableSQLAlias = 'CIDADES_1'
+        end
+        object daField14: TdaField
+          Alias = 'Estado'
+          DisplayWidth = 0
+          FieldAlias = 'Estado'
+          FieldLength = 0
+          FieldName = 'ESTADO'
+          SQLFieldName = 'ESTADO'
+          TableAlias = 'Cidades'
+          TableName = 'CIDADES'
+          TableSQLAlias = 'CIDADES_1'
+        end
+        object daField15: TdaField
+          Alias = 'Fone'
+          DisplayWidth = 0
+          FieldAlias = 'Fone'
+          FieldLength = 0
+          FieldName = 'FONE'
+          SQLFieldName = 'FONE'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField16: TdaField
+          Alias = 'Fax'
+          DisplayWidth = 0
+          FieldAlias = 'Fax'
+          FieldLength = 0
+          FieldName = 'FAX'
+          SQLFieldName = 'FAX'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField17: TdaField
+          Alias = 'Email'
+          DisplayWidth = 0
+          FieldAlias = 'Email'
+          FieldLength = 0
+          FieldName = 'EMAIL'
+          SQLFieldName = 'EMAIL'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField18: TdaField
+          Alias = 'Celular'
+          DisplayWidth = 0
+          FieldAlias = 'Celular'
+          FieldLength = 0
+          FieldName = 'CELULAR'
+          SQLFieldName = 'CELULAR'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField19: TdaField
+          Alias = 'Datacadast'
+          DataType = dtDateTime
+          DisplayWidth = 0
+          FieldAlias = 'Datacadast'
+          FieldLength = 0
+          FieldName = 'DATACADAST'
+          SQLFieldName = 'DATACADAST'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField20: TdaField
+          Alias = 'Contato'
+          DisplayWidth = 0
+          FieldAlias = 'Contato'
+          FieldLength = 0
+          FieldName = 'CONTATO'
+          SQLFieldName = 'CONTATO'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daField21: TdaField
+          Alias = 'Cep'
+          DisplayWidth = 0
+          FieldAlias = 'Cep'
+          FieldLength = 0
+          FieldName = 'CEP'
+          SQLFieldName = 'CEP'
+          TableAlias = 'Logradouros'
+          TableName = 'LOGRADOUROS'
+          TableSQLAlias = 'LOGRADOUROS_1'
+        end
+        object daField22: TdaField
+          ChildType = 2
+          Alias = 'Nome'
+          DisplayWidth = 0
+          FieldAlias = 'Nome'
+          FieldLength = 0
+          FieldName = 'NOME'
+          SQLFieldName = 'NOME'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+          TableSQLAlias = 'CLIENTES_1'
+        end
+        object daTable1: TdaTable
+          ChildType = 5
+          Alias = 'Clientes'
+          JoinType = dajtNone
+          SQLAlias = 'CLIENTES_1'
+          TableAlias = 'Clientes'
+          TableName = 'CLIENTES'
+        end
+        object daTable2: TdaTable
+          ChildType = 5
+          Alias = 'Logradouros'
+          JoinType = dajtLeftOuter
+          SQLAlias = 'LOGRADOUROS_1'
+          TableAlias = 'Logradouros'
+          TableName = 'LOGRADOUROS'
+          object daTableJoin1: TdaTableJoin
+            ChildType = 6
+            object daField24: TdaField
+              ChildType = 3
+              Alias = 'Codigo'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Codigo'
+              FieldLength = 0
+              FieldName = 'CODIGO'
+              TableAlias = 'Logradouros'
+              TableName = 'LOGRADOUROS'
+              TableSQLAlias = 'LOGRADOUROS_1'
+            end
+            object daField23: TdaField
+              ChildType = 4
+              Alias = 'Localizacao'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Localizacao'
+              FieldLength = 0
+              FieldName = 'LOCALIZACAO'
+              TableAlias = 'Clientes'
+              TableName = 'CLIENTES'
+              TableSQLAlias = 'CLIENTES_1'
+            end
+          end
+          object daTableJoin2: TdaTableJoin
+            ChildType = 6
+            object daField26: TdaField
+              ChildType = 3
+              Alias = 'Bairro'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Bairro'
+              FieldLength = 0
+              FieldName = 'BAIRRO'
+              TableAlias = 'Logradouros'
+              TableName = 'LOGRADOUROS'
+              TableSQLAlias = 'LOGRADOUROS_1'
+            end
+            object daField25: TdaField
+              ChildType = 4
+              Alias = 'Bairro'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Bairro'
+              FieldLength = 0
+              FieldName = 'BAIRRO'
+              TableAlias = 'Clientes'
+              TableName = 'CLIENTES'
+              TableSQLAlias = 'CLIENTES_1'
+            end
+          end
+          object daTableJoin3: TdaTableJoin
+            ChildType = 6
+            object daField28: TdaField
+              ChildType = 3
+              Alias = 'Cidade'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Cidade'
+              FieldLength = 0
+              FieldName = 'CIDADE'
+              TableAlias = 'Logradouros'
+              TableName = 'LOGRADOUROS'
+              TableSQLAlias = 'LOGRADOUROS_1'
+            end
+            object daField27: TdaField
+              ChildType = 4
+              Alias = 'Cidade'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Cidade'
+              FieldLength = 0
+              FieldName = 'CIDADE'
+              TableAlias = 'Clientes'
+              TableName = 'CLIENTES'
+              TableSQLAlias = 'CLIENTES_1'
+            end
+          end
+          object daTableJoin4: TdaTableJoin
+            ChildType = 6
+            object daField30: TdaField
+              ChildType = 3
+              Alias = 'Estado'
+              DisplayWidth = 0
+              FieldAlias = 'Estado'
+              FieldLength = 0
+              FieldName = 'ESTADO'
+              TableAlias = 'Logradouros'
+              TableName = 'LOGRADOUROS'
+              TableSQLAlias = 'LOGRADOUROS_1'
+            end
+            object daField29: TdaField
+              ChildType = 4
+              Alias = 'Estado'
+              DisplayWidth = 0
+              FieldAlias = 'Estado'
+              FieldLength = 0
+              FieldName = 'ESTADO'
+              TableAlias = 'Clientes'
+              TableName = 'CLIENTES'
+              TableSQLAlias = 'CLIENTES_1'
+            end
+          end
+        end
+        object daTable3: TdaTable
+          ChildType = 5
+          Alias = 'Bairros'
+          JoinType = dajtLeftOuter
+          SQLAlias = 'BAIRROS_1'
+          TableAlias = 'Bairros'
+          TableName = 'BAIRROS'
+          object daTableJoin5: TdaTableJoin
+            ChildType = 6
+            object daField32: TdaField
+              ChildType = 3
+              Alias = 'Codigo'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Codigo'
+              FieldLength = 0
+              FieldName = 'CODIGO'
+              TableAlias = 'Bairros'
+              TableName = 'BAIRROS'
+              TableSQLAlias = 'BAIRROS_1'
+            end
+            object daField31: TdaField
+              ChildType = 4
+              Alias = 'Bairro'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Bairro'
+              FieldLength = 0
+              FieldName = 'BAIRRO'
+              TableAlias = 'Clientes'
+              TableName = 'CLIENTES'
+              TableSQLAlias = 'CLIENTES_1'
+            end
+          end
+          object daTableJoin6: TdaTableJoin
+            ChildType = 6
+            object daField34: TdaField
+              ChildType = 3
+              Alias = 'Cidade'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Cidade'
+              FieldLength = 0
+              FieldName = 'CIDADE'
+              TableAlias = 'Bairros'
+              TableName = 'BAIRROS'
+              TableSQLAlias = 'BAIRROS_1'
+            end
+            object daField33: TdaField
+              ChildType = 4
+              Alias = 'Cidade'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Cidade'
+              FieldLength = 0
+              FieldName = 'CIDADE'
+              TableAlias = 'Clientes'
+              TableName = 'CLIENTES'
+              TableSQLAlias = 'CLIENTES_1'
+            end
+          end
+          object daTableJoin7: TdaTableJoin
+            ChildType = 6
+            object daField36: TdaField
+              ChildType = 3
+              Alias = 'Estado'
+              DisplayWidth = 0
+              FieldAlias = 'Estado'
+              FieldLength = 0
+              FieldName = 'ESTADO'
+              TableAlias = 'Bairros'
+              TableName = 'BAIRROS'
+              TableSQLAlias = 'BAIRROS_1'
+            end
+            object daField35: TdaField
+              ChildType = 4
+              Alias = 'Estado'
+              DisplayWidth = 0
+              FieldAlias = 'Estado'
+              FieldLength = 0
+              FieldName = 'ESTADO'
+              TableAlias = 'Clientes'
+              TableName = 'CLIENTES'
+              TableSQLAlias = 'CLIENTES_1'
+            end
+          end
+        end
+        object daTable4: TdaTable
+          ChildType = 5
+          Alias = 'Cidades'
+          JoinType = dajtLeftOuter
+          SQLAlias = 'CIDADES_1'
+          TableAlias = 'Cidades'
+          TableName = 'CIDADES'
+          object daTableJoin8: TdaTableJoin
+            ChildType = 6
+            object daField38: TdaField
+              ChildType = 3
+              Alias = 'Codigo'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Codigo'
+              FieldLength = 0
+              FieldName = 'CODIGO'
+              TableAlias = 'Cidades'
+              TableName = 'CIDADES'
+              TableSQLAlias = 'CIDADES_1'
+            end
+            object daField37: TdaField
+              ChildType = 4
+              Alias = 'Cidade'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Cidade'
+              FieldLength = 0
+              FieldName = 'CIDADE'
+              TableAlias = 'Clientes'
+              TableName = 'CLIENTES'
+              TableSQLAlias = 'CLIENTES_1'
+            end
+          end
+          object daTableJoin9: TdaTableJoin
+            ChildType = 6
+            object daField40: TdaField
+              ChildType = 3
+              Alias = 'Estado'
+              DisplayWidth = 0
+              FieldAlias = 'Estado'
+              FieldLength = 0
+              FieldName = 'ESTADO'
+              TableAlias = 'Cidades'
+              TableName = 'CIDADES'
+              TableSQLAlias = 'CIDADES_1'
+            end
+            object daField39: TdaField
+              ChildType = 4
+              Alias = 'Estado'
+              DisplayWidth = 0
+              FieldAlias = 'Estado'
+              FieldLength = 0
+              FieldName = 'ESTADO'
+              TableAlias = 'Clientes'
+              TableName = 'CLIENTES'
+              TableSQLAlias = 'CLIENTES_1'
+            end
+          end
+        end
+      end
+    end
+  end
+  object raCodeModule1: TraCodeModule
+    ProgramStream = {
+      01060F5472614576656E7448616E646C65720B50726F6772616D4E616D650622
+      5265706F72744265666F72654175746F5365617263684469616C6F6743726561
+      74650B50726F6772616D54797065070B747450726F63656475726506536F7572
+      636506DE70726F636564757265205265706F72744265666F72654175746F5365
+      617263684469616C6F674372656174653B0D0A626567696E0D0A202020526570
+      6F72742E4175746F5365617263684669656C64735B305D2E4669656C64416C69
+      6173203A3D20274E6F6D65273B090D0A2020205265706F72742E4175746F5365
+      617263684669656C64735B315D2E4669656C64416C696173203A3D2027546970
+      6F273B0D0A2020205265706F72742E4175746F5365617263684669656C64735B
+      325D2E4669656C64416C696173203A3D20274F63756C746F273B0D0A656E643B
+      0D0A0D436F6D706F6E656E744E616D6506065265706F7274094576656E744E61
+      6D65061C4265666F72654175746F5365617263684469616C6F67437265617465
+      074576656E74494402480000}
+  end
+end

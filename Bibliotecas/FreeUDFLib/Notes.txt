@@ -1,0 +1,56 @@
+Important release notes:
+------------------------
+
+3/10/98
+
+Because FreeUDFLib has been in release for over a year now, it is important
+to recognize that many functions in the library should be removed in favor
+of others.
+
+With that in mind, we are following the following guidelines for obsoleting
+functions:
+
+1. When a function is marked as obsolete, it will be noted here, as well as
+   in the project source file.
+2. It will be given an obsolescence "index" of 1.
+3. During each subsequent release, the obsolescence index of obsolete
+   functions will be incremented.
+4. When the obsolescence index reaches 4, it will be removed from the
+   source distribution altogether (I reserve the right to let the index
+   creep past 4 if I'm feeling lazy, but I guarantee that it will
+   get at least to 4).
+5. This means that the IB community has 4 releases to complain about
+   a potentially bad decision I might make about obsoleting something!
+
+Here is a list of obsolete functions and their associated obsolescence
+indexes:
+
+  UserMaintenance,                                      // Obsolete! (1)
+     UserMaintenance is *not* a terribly useful function for adding and
+     deleting users. It asks IB to start the gsec procedure on the server
+     to add users, etc...
+     Instead, the IBPassword function can be used with a direct connection
+     to ISC4.GDB for adding, deleting and modifying users.
+     (See encrypt.pas and chgpasswd.sql)
+  FindFirstWord,                                        // Obsolete! (1)
+  FindNextWord,                                         // Obsolete! (1)
+     These two functions don't work properly with InterBase, as
+     they would be used with the assumption that
+          1 connection = 1 thread,
+     but this is simply not the case.
+     In a multi-user environment, FindFirstWord will always be correct, but
+     FindNextWord could possibly return some wacky results.
+  FindNthWord,                                          // Obsolete! (1)
+     This function was made to accomodate the weirdnesses of the above
+     two functions, but we've gotten better. Now, word-finding should be
+     done using the two functions
+       FindWord
+       FindWordIndex
+  Strip,                                                // Obsolete! (1)
+     This function is a bit hard to understand! It certainly works at
+     stripping unwanted characters, but it's very difficult to grasp
+     the meaning of its declaration.
+     A simpler, easier to follow function, called StripString is now
+     the standard!
+
+

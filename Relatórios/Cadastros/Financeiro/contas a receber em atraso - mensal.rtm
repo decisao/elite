@@ -1,0 +1,949 @@
+object ppReport1: TppReport
+  AutoStop = False
+  DataPipeline = IBXQueryDataView1.plPagamentos
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'Carta'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 279401
+  PrinterSetup.mmPaperWidth = 215900
+  PrinterSetup.PaperSize = 1
+  SaveAsTemplate = True
+  Template.DatabaseSettings.DataPipeline = plItem
+  Template.DatabaseSettings.Name = 'contas a receber em atraso - mensal'
+  Template.DatabaseSettings.NameField = 'NAME'
+  Template.DatabaseSettings.TemplateField = 'TEMPLATE'
+  Template.FileName = 
+    'D:\empresa1\Relatórios\Cadastros\Financeiro\contas a receber em ' +
+    'atraso - mensal.rtm'
+  Template.Format = ftASCII
+  AllowPrintToArchive = True
+  AllowPrintToFile = True
+  DeviceType = 'Screen'
+  Language = lgPortugueseBrazil
+  OnAutoSearchDialogClose = ppReport1AutoSearchDialogClose
+  OutlineSettings.CreateNode = True
+  OutlineSettings.CreatePageNodes = True
+  OutlineSettings.Enabled = False
+  PreviewFormSettings.WindowState = wsMaximized
+  PreviewFormSettings.ZoomSetting = zsPageWidth
+  SavePrinterSetup = True
+  ShowAutoSearchDialog = True
+  TextFileType = ftFixedLength
+  Left = 320
+  Top = 325
+  Version = '7.0'
+  mmColumnWidth = 0
+  DataPipelineName = 'plPagamentos'
+  object ppHeaderBand1: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+    object ppShape1: TppShape
+      UserName = 'Shape1'
+      mmHeight = 8467
+      mmLeft = 3175
+      mmTop = 3175
+      mmWidth = 196850
+      BandType = 0
+    end
+    object ppLabel1: TppLabel
+      UserName = 'Label1'
+      Caption = 'CONTAS A RECEBER EM ATRASO MENSAL'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 16
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 6646
+      mmLeft = 4498
+      mmTop = 4763
+      mmWidth = 118364
+      BandType = 0
+    end
+    object ppSystemVariable1: TppSystemVariable
+      UserName = 'SystemVariable1'
+      VarType = vtPageNo
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 16
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 6350
+      mmLeft = 195263
+      mmTop = 4763
+      mmWidth = 3175
+      BandType = 0
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 3704
+    mmPrintPosition = 0
+    object ppDBText1: TppDBText
+      UserName = 'DBText1'
+      DataField = 'CODMOVIMENTO'
+      DataPipeline = IBXQueryDataView1.plPagamentos
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 8
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'plPagamentos'
+      mmHeight = 3260
+      mmLeft = 3175
+      mmTop = 0
+      mmWidth = 8996
+      BandType = 4
+    end
+    object ppLabel3: TppLabel
+      UserName = 'Label3'
+      Caption = '/'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 8
+      Font.Style = [fsBold]
+      TextAlignment = taCentered
+      Transparent = True
+      mmHeight = 3704
+      mmLeft = 12700
+      mmTop = 0
+      mmWidth = 794
+      BandType = 4
+    end
+    object ppDBText2: TppDBText
+      UserName = 'DBText2'
+      DataField = 'NUMERO'
+      DataPipeline = IBXQueryDataView1.plPagamentos
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plPagamentos'
+      mmHeight = 3260
+      mmLeft = 14288
+      mmTop = 0
+      mmWidth = 5292
+      BandType = 4
+    end
+    object ppDBText3: TppDBText
+      UserName = 'DBText3'
+      DataField = 'DESCRICAO'
+      DataPipeline = IBXQueryDataView1.plPagamentos
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plPagamentos'
+      mmHeight = 3260
+      mmLeft = 20902
+      mmTop = 0
+      mmWidth = 64823
+      BandType = 4
+    end
+    object ppDBText4: TppDBText
+      UserName = 'DBText4'
+      DataField = 'DOCUMENTO'
+      DataPipeline = IBXQueryDataView1.plPagamentos
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plPagamentos'
+      mmHeight = 3260
+      mmLeft = 87048
+      mmTop = 0
+      mmWidth = 31750
+      BandType = 4
+    end
+    object ppDBText5: TppDBText
+      UserName = 'DBText5'
+      DataField = 'INFODOC'
+      DataPipeline = IBXQueryDataView1.plPagamentos
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'plPagamentos'
+      mmHeight = 3260
+      mmLeft = 120650
+      mmTop = 0
+      mmWidth = 48419
+      BandType = 4
+    end
+    object ppDBText6: TppDBText
+      UserName = 'DBText6'
+      DataField = 'VALOR'
+      DataPipeline = IBXQueryDataView1.plPagamentos
+      DisplayFormat = '#,0.00;(#,0.00)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 8
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'plPagamentos'
+      mmHeight = 3260
+      mmLeft = 177271
+      mmTop = 0
+      mmWidth = 21167
+      BandType = 4
+    end
+    object ppDBText8: TppDBText
+      UserName = 'DBText8'
+      DataField = 'CODEMPRESA'
+      DataPipeline = IBXQueryDataView1.plPagamentos
+      DisplayFormat = '0#'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 8
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'plPagamentos'
+      mmHeight = 3260
+      mmLeft = 170392
+      mmTop = 0
+      mmWidth = 5821
+      BandType = 4
+    end
+  end
+  object ppFooterBand1: TppFooterBand
+    mmBottomOffset = 0
+    mmHeight = 7673
+    mmPrintPosition = 0
+    object ppShape2: TppShape
+      UserName = 'Shape2'
+      mmHeight = 4498
+      mmLeft = 3175
+      mmTop = 3175
+      mmWidth = 196850
+      BandType = 8
+    end
+    object ppLabel2: TppLabel
+      UserName = 'Label2'
+      Caption = 'Sistema Empresa1 - copyright (c) 1999-2004 Eliéser Morais'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 8
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3387
+      mmLeft = 3969
+      mmTop = 3440
+      mmWidth = 79163
+      BandType = 8
+    end
+    object ppSystemVariable2: TppSystemVariable
+      UserName = 'SystemVariable2'
+      VarType = vtDateTime
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 8
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 3704
+      mmLeft = 168275
+      mmTop = 3440
+      mmWidth = 30163
+      BandType = 8
+    end
+  end
+  object ppSummaryBand1: TppSummaryBand
+    mmBottomOffset = 0
+    mmHeight = 11642
+    mmPrintPosition = 0
+    object ppShape5: TppShape
+      UserName = 'Shape5'
+      mmHeight = 8467
+      mmLeft = 3175
+      mmTop = 3175
+      mmWidth = 196850
+      BandType = 7
+    end
+    object ppLabel10: TppLabel
+      UserName = 'Label10'
+      Caption = 'TOTAL GERAL'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 16
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 6350
+      mmLeft = 99219
+      mmTop = 4763
+      mmWidth = 39423
+      BandType = 7
+    end
+    object ppDBCalc2: TppDBCalc
+      UserName = 'DBCalc2'
+      DataField = 'VALOR'
+      DataPipeline = IBXQueryDataView1.plPagamentos
+      DisplayFormat = '#,0.00;-#,0.00'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 16
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'plPagamentos'
+      mmHeight = 6350
+      mmLeft = 139436
+      mmTop = 4763
+      mmWidth = 58738
+      BandType = 7
+    end
+  end
+  object ppGroup1: TppGroup
+    BreakName = 'UDF_PADL_EXTRACT_MONTH_FR'
+    DataPipeline = IBXQueryDataView1.plPagamentos
+    OutlineSettings.CreateNode = True
+    UserName = 'Group1'
+    mmNewColumnThreshold = 0
+    mmNewPageThreshold = 0
+    DataPipelineName = 'plPagamentos'
+    object ppGroupHeaderBand1: TppGroupHeaderBand
+      mmBottomOffset = 0
+      mmHeight = 17727
+      mmPrintPosition = 0
+      object ppShape3: TppShape
+        UserName = 'Shape3'
+        mmHeight = 8467
+        mmLeft = 3175
+        mmTop = 3175
+        mmWidth = 196850
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppDBText7: TppDBText
+        UserName = 'DBText7'
+        DataField = 'UDF_PADL_EXTRACT_MONTH_FR'
+        DataPipeline = IBXQueryDataView1.plPagamentos
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 16
+        Font.Style = [fsBold]
+        Transparent = True
+        DataPipelineName = 'plPagamentos'
+        mmHeight = 6350
+        mmLeft = 4498
+        mmTop = 4763
+        mmWidth = 91811
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel5: TppLabel
+        UserName = 'Label5'
+        Caption = 'OS'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 3387
+        mmLeft = 7801
+        mmTop = 14023
+        mmWidth = 4106
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel8: TppLabel
+        UserName = 'Label8'
+        Caption = 'Descrição'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3387
+        mmLeft = 20902
+        mmTop = 14023
+        mmWidth = 13504
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel6: TppLabel
+        UserName = 'Label6'
+        Caption = 'Documento'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3387
+        mmLeft = 87048
+        mmTop = 14023
+        mmWidth = 15579
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel7: TppLabel
+        UserName = 'Label7'
+        Caption = 'Detalhes do documento'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3387
+        mmLeft = 120650
+        mmTop = 14023
+        mmWidth = 32131
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel9: TppLabel
+        UserName = 'Label9'
+        Caption = 'Valor'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 3387
+        mmLeft = 191326
+        mmTop = 14023
+        mmWidth = 7112
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel11: TppLabel
+        UserName = 'Label11'
+        Caption = 'Empresa'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 3387
+        mmLeft = 164233
+        mmTop = 14023
+        mmWidth = 11980
+        BandType = 3
+        GroupNo = 0
+      end
+    end
+    object ppGroupFooterBand1: TppGroupFooterBand
+      mmBottomOffset = 0
+      mmHeight = 11642
+      mmPrintPosition = 0
+      object ppShape4: TppShape
+        UserName = 'Shape4'
+        mmHeight = 8467
+        mmLeft = 3175
+        mmTop = 3175
+        mmWidth = 196850
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppDBCalc1: TppDBCalc
+        UserName = 'DBCalc1'
+        DataField = 'VALOR'
+        DataPipeline = IBXQueryDataView1.plPagamentos
+        DisplayFormat = '#,0.00;-#,0.00'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 16
+        Font.Style = [fsBold]
+        ResetGroup = ppGroup1
+        TextAlignment = taRightJustified
+        Transparent = True
+        DataPipelineName = 'plPagamentos'
+        mmHeight = 6350
+        mmLeft = 139436
+        mmTop = 4763
+        mmWidth = 58738
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppLabel4: TppLabel
+        UserName = 'Label4'
+        Caption = 'TOTAL'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 16
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 6350
+        mmLeft = 120121
+        mmTop = 4763
+        mmWidth = 18521
+        BandType = 5
+        GroupNo = 0
+      end
+    end
+  end
+  object daDataModule1: TdaDataModule
+    object IBXQueryDataView1: TdaIBXQueryDataView
+      UserName = 'Query_Pagamentos'
+      Height = 305
+      Left = 10
+      NameColumnWidth = 105
+      SizeColumnWidth = 35
+      SortMode = 0
+      Top = 10
+      TypeColumnWidth = 52
+      Width = 242
+      AutoSearchTabOrder = 0
+      object plPagamentos: TppChildDBPipeline
+        AutoCreateFields = False
+        UserName = 'plPagamentos'
+        object ppField1: TppField
+          FieldAlias = 'Codigo'
+          FieldName = 'CODIGO'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 0
+          TableName = 'PAGAMENTOS_1'
+        end
+        object ppField2: TppField
+          FieldAlias = 'Codmovimento'
+          FieldName = 'CODMOVIMENTO'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 1
+          TableName = 'PAGAMENTOS_1'
+        end
+        object ppField3: TppField
+          FieldAlias = 'Numero'
+          FieldName = 'NUMERO'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 2
+          TableName = 'PAGAMENTOS_1'
+        end
+        object ppField4: TppField
+          FieldAlias = 'Descricao'
+          FieldName = 'DESCRICAO'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 3
+          TableName = 'PAGAMENTOS_1'
+        end
+        object ppField5: TppField
+          FieldAlias = 'Valor'
+          FieldName = 'VALOR'
+          FieldLength = 0
+          DataType = dtDouble
+          DisplayWidth = 0
+          Position = 4
+          TableName = 'PAGAMENTOS_1'
+        end
+        object ppField6: TppField
+          FieldAlias = 'Datavencimento'
+          FieldName = 'DATAVENCIMENTO'
+          FieldLength = 0
+          DataType = dtDateTime
+          DisplayWidth = 0
+          Position = 5
+          TableName = 'PAGAMENTOS_1'
+        end
+        object ppField7: TppField
+          FieldAlias = 'Infodoc'
+          FieldName = 'INFODOC'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 6
+          TableName = 'PAGAMENTOS_1'
+        end
+        object ppField8: TppField
+          FieldAlias = 'Documento'
+          FieldName = 'DOCUMENTO'
+          FieldLength = 0
+          DisplayWidth = 0
+          Position = 7
+          TableName = 'DOCUMENTOS_1'
+        end
+        object ppField9: TppField
+          FieldAlias = 'Codempresa'
+          FieldName = 'CODEMPRESA'
+          FieldLength = 0
+          DataType = dtInteger
+          DisplayWidth = 0
+          Position = 8
+          TableName = 'PAGAMENTOS_1'
+        end
+        object ppField10: TppField
+          FieldAlias = 
+            'UDF_PADL(EXTRACT(MONTH FROM DATAVENCIMENTO), '#39'0'#39', 2) || '#39'/'#39' || E' +
+            'XTRACT(YEAR FROM DATAVENCIMENTO)'
+          FieldName = 'UDF_PADL_EXTRACT_MONTH_FR'
+          FieldLength = 0
+          Linkable = False
+          DisplayWidth = 18
+          Position = 9
+          TableName = 'PAGAMENTOS_1'
+        end
+      end
+      object daSQL1: TdaSQL
+        CollationType = ctASCII
+        DatabaseName = 'Database'
+        DatabaseType = dtInterBase
+        DataPipelineName = 'plPagamentos'
+        IsCaseSensitive = True
+        LinkColor = clBlack
+        MaxSQLFieldAliasLength = 25
+        SQLText.Strings = (
+          'SELECT PAGAMENTOS_1.CODIGO, '
+          '       PAGAMENTOS_1.CODMOVIMENTO, '
+          '       PAGAMENTOS_1.NUMERO, '
+          '       PAGAMENTOS_1.DESCRICAO, '
+          '       PAGAMENTOS_1.VALOR, '
+          '       PAGAMENTOS_1.DATAVENCIMENTO, '
+          '       PAGAMENTOS_1.INFODOC, '
+          '       DOCUMENTOS_1.DOCUMENTO, '
+          '       PAGAMENTOS_1.CODEMPRESA, '
+          
+            '       UDF_PADL(EXTRACT(MONTH FROM DATAVENCIMENTO), '#39'0'#39', 2) || '#39 +
+            '/'#39' || EXTRACT(YEAR FROM DATAVENCIMENTO) UDF_PADL_EXTRACT_MONTH_F' +
+            'R'
+          'FROM PAGAMENTOS PAGAMENTOS_1'
+          '      LEFT OUTER JOIN DOCUMENTOS DOCUMENTOS_1 ON '
+          '     (DOCUMENTOS_1.CODIGO = PAGAMENTOS_1.CODDOCUMENTO)'
+          'WHERE ( PAGAMENTOS_1.ES = 2 )'
+          '       AND ( PAGAMENTOS_1.PAGO = 0 )'
+          'ORDER BY PAGAMENTOS_1.DATAVENCIMENTO, '
+          '         PAGAMENTOS_1.CODMOVIMENTO, '
+          '         PAGAMENTOS_1.NUMERO')
+        SQLType = sqSQL2
+        object daCalculation1: TdaCalculation
+          ChildType = 8
+          Alias = 
+            'UDF_PADL(EXTRACT(MONTH FROM DATAVENCIMENTO), '#39'0'#39', 2) || '#39'/'#39' || E' +
+            'XTRACT(YEAR FROM DATAVENCIMENTO)'
+          DisplayWidth = 18
+          FieldAlias = 'DATAVENCIMENTO'
+          FieldLength = 0
+          FieldName = 'DATAVENCIMENTO'
+          Linkable = False
+          SQLFieldName = 'UDF_PADL_EXTRACT_MONTH_FR'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+          CalcType = dacaExpression
+          Expression = 
+            'UDF_PADL(EXTRACT(MONTH FROM DATAVENCIMENTO), '#39'0'#39', 2) || '#39'/'#39' || E' +
+            'XTRACT(YEAR FROM DATAVENCIMENTO)'
+        end
+        object daCriteria1: TdaCriteria
+          ChildType = 7
+          Level = 0
+          Operator = dacoBetween
+          object TdaField
+            Alias = 'Datavencimento'
+            AutoSearch = True
+            DataType = dtDateTime
+            DisplayWidth = 0
+            FieldAlias = 'Datavencimento'
+            FieldLength = 0
+            FieldName = 'DATAVENCIMENTO'
+            Mandatory = True
+            TableAlias = 'Pagamentos'
+            TableName = 'PAGAMENTOS'
+            TableSQLAlias = 'PAGAMENTOS_1'
+          end
+        end
+        object daCriteria2: TdaCriteria
+          ChildType = 7
+          Level = 0
+          Operator = dacoLessThan
+          object TdaField
+            Alias = 'Datavencimento'
+            AutoSearch = True
+            DataType = dtDateTime
+            DisplayWidth = 0
+            FieldAlias = 'Datavencimento'
+            FieldLength = 0
+            FieldName = 'DATAVENCIMENTO'
+            Mandatory = True
+            TableAlias = 'Pagamentos'
+            TableName = 'PAGAMENTOS'
+            TableSQLAlias = 'PAGAMENTOS_1'
+          end
+        end
+        object daCriteria3: TdaCriteria
+          ChildType = 7
+          Level = 0
+          Value = '2'
+          object TdaField
+            Alias = 'Es'
+            DataType = dtInteger
+            DisplayWidth = 0
+            FieldAlias = 'Es'
+            FieldLength = 0
+            FieldName = 'ES'
+            TableAlias = 'Pagamentos'
+            TableName = 'PAGAMENTOS'
+            TableSQLAlias = 'PAGAMENTOS_1'
+          end
+          object TdaNumericValue
+            Value = 2
+          end
+        end
+        object daCriteria4: TdaCriteria
+          ChildType = 7
+          Level = 0
+          Value = '0'
+          object TdaField
+            Alias = 'Pago'
+            DataType = dtInteger
+            DisplayWidth = 0
+            FieldAlias = 'Pago'
+            FieldLength = 0
+            FieldName = 'PAGO'
+            TableAlias = 'Pagamentos'
+            TableName = 'PAGAMENTOS'
+            TableSQLAlias = 'PAGAMENTOS_1'
+          end
+          object TdaNumericValue
+          end
+        end
+        object daCriteria5: TdaCriteria
+          ChildType = 7
+          Level = 0
+          object TdaField
+            Alias = 'Codempresa'
+            AutoSearch = True
+            DataType = dtInteger
+            DisplayWidth = 0
+            FieldAlias = 'Codempresa'
+            FieldLength = 0
+            FieldName = 'CODEMPRESA'
+            TableAlias = 'Pagamentos'
+            TableName = 'PAGAMENTOS'
+            TableSQLAlias = 'PAGAMENTOS_1'
+          end
+        end
+        object daField1: TdaField
+          Alias = 'Codigo'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Codigo'
+          FieldLength = 0
+          FieldName = 'CODIGO'
+          SQLFieldName = 'CODIGO'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+        end
+        object daField2: TdaField
+          Alias = 'Codmovimento'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Codmovimento'
+          FieldLength = 0
+          FieldName = 'CODMOVIMENTO'
+          SQLFieldName = 'CODMOVIMENTO'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+        end
+        object daField3: TdaField
+          Alias = 'Numero'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Numero'
+          FieldLength = 0
+          FieldName = 'NUMERO'
+          SQLFieldName = 'NUMERO'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+        end
+        object daField4: TdaField
+          Alias = 'Descricao'
+          DisplayWidth = 0
+          FieldAlias = 'Descricao'
+          FieldLength = 0
+          FieldName = 'DESCRICAO'
+          SQLFieldName = 'DESCRICAO'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+        end
+        object daField5: TdaField
+          Alias = 'Valor'
+          DataType = dtDouble
+          DisplayWidth = 0
+          FieldAlias = 'Valor'
+          FieldLength = 0
+          FieldName = 'VALOR'
+          SQLFieldName = 'VALOR'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+        end
+        object daField6: TdaField
+          Alias = 'Datavencimento'
+          DataType = dtDateTime
+          DisplayWidth = 0
+          FieldAlias = 'Datavencimento'
+          FieldLength = 0
+          FieldName = 'DATAVENCIMENTO'
+          SQLFieldName = 'DATAVENCIMENTO'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+        end
+        object daField7: TdaField
+          Alias = 'Infodoc'
+          DisplayWidth = 0
+          FieldAlias = 'Infodoc'
+          FieldLength = 0
+          FieldName = 'INFODOC'
+          SQLFieldName = 'INFODOC'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+        end
+        object daField8: TdaField
+          Alias = 'Documento'
+          DisplayWidth = 0
+          FieldAlias = 'Documento'
+          FieldLength = 0
+          FieldName = 'DOCUMENTO'
+          SQLFieldName = 'DOCUMENTO'
+          TableAlias = 'Documentos'
+          TableName = 'DOCUMENTOS'
+          TableSQLAlias = 'DOCUMENTOS_1'
+        end
+        object daField9: TdaField
+          Alias = 'Codempresa'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Codempresa'
+          FieldLength = 0
+          FieldName = 'CODEMPRESA'
+          SQLFieldName = 'CODEMPRESA'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+        end
+        object daField10: TdaField
+          ChildType = 2
+          Alias = 'Datavencimento'
+          DataType = dtDateTime
+          DisplayWidth = 0
+          FieldAlias = 'Datavencimento'
+          FieldLength = 0
+          FieldName = 'DATAVENCIMENTO'
+          SQLFieldName = 'DATAVENCIMENTO'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+        end
+        object daField11: TdaField
+          ChildType = 2
+          Alias = 'Codmovimento'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Codmovimento'
+          FieldLength = 0
+          FieldName = 'CODMOVIMENTO'
+          SQLFieldName = 'CODMOVIMENTO'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+        end
+        object daField12: TdaField
+          ChildType = 2
+          Alias = 'Numero'
+          DataType = dtInteger
+          DisplayWidth = 0
+          FieldAlias = 'Numero'
+          FieldLength = 0
+          FieldName = 'NUMERO'
+          SQLFieldName = 'NUMERO'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+          TableSQLAlias = 'PAGAMENTOS_1'
+        end
+        object daTable1: TdaTable
+          ChildType = 5
+          Alias = 'Pagamentos'
+          JoinType = dajtNone
+          SQLAlias = 'PAGAMENTOS_1'
+          TableAlias = 'Pagamentos'
+          TableName = 'PAGAMENTOS'
+        end
+        object daTable2: TdaTable
+          ChildType = 5
+          Alias = 'Documentos'
+          JoinType = dajtLeftOuter
+          SQLAlias = 'DOCUMENTOS_1'
+          TableAlias = 'Documentos'
+          TableName = 'DOCUMENTOS'
+          object daTableJoin1: TdaTableJoin
+            ChildType = 6
+            object daField14: TdaField
+              ChildType = 3
+              Alias = 'Codigo'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Codigo'
+              FieldLength = 0
+              FieldName = 'CODIGO'
+              TableAlias = 'Documentos'
+              TableName = 'DOCUMENTOS'
+              TableSQLAlias = 'DOCUMENTOS_1'
+            end
+            object daField13: TdaField
+              ChildType = 4
+              Alias = 'Coddocumento'
+              DataType = dtInteger
+              DisplayWidth = 0
+              FieldAlias = 'Coddocumento'
+              FieldLength = 0
+              FieldName = 'CODDOCUMENTO'
+              TableAlias = 'Pagamentos'
+              TableName = 'PAGAMENTOS'
+              TableSQLAlias = 'PAGAMENTOS_1'
+            end
+          end
+        end
+      end
+    end
+  end
+end

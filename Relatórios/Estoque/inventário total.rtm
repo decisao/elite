@@ -1,0 +1,1009 @@
+object ppReport1: TppReport
+  AutoStop = False
+  DataPipeline = daIBXQueryDataView1.ESTOQUE
+  PrinterSetup.BinName = 'Default'
+  PrinterSetup.DocumentName = 'Report'
+  PrinterSetup.PaperName = 'A4 210 x 297 mm'
+  PrinterSetup.PrinterName = 'Default'
+  PrinterSetup.mmMarginBottom = 6350
+  PrinterSetup.mmMarginLeft = 6350
+  PrinterSetup.mmMarginRight = 6350
+  PrinterSetup.mmMarginTop = 6350
+  PrinterSetup.mmPaperHeight = 297000
+  PrinterSetup.mmPaperWidth = 210000
+  PrinterSetup.PaperSize = 9
+  SaveAsTemplate = True
+  Template.DatabaseSettings.DataPipeline = plItem
+  Template.DatabaseSettings.Name = 'inventário total'
+  Template.DatabaseSettings.NameField = 'NAME'
+  Template.DatabaseSettings.TemplateField = 'TEMPLATE'
+  Template.FileName = 'D:\empresa1\Relatórios\Estoque\inventário total.rtm'
+  Template.Format = ftASCII
+  Units = utMillimeters
+  AllowPrintToArchive = True
+  AllowPrintToFile = True
+  BeforeAutoSearchDialogCreate = ppReport1AutoSearchDialogCreate
+  CachePages = True
+  DeviceType = 'Screen'
+  Language = lgPortugueseBrazil
+  OnAutoSearchDialogClose = ppReport1AutoSearchDialogClose
+  OutlineSettings.CreateNode = True
+  OutlineSettings.CreatePageNodes = True
+  OutlineSettings.Enabled = False
+  PreviewFormSettings.WindowState = wsMaximized
+  PreviewFormSettings.ZoomSetting = zsPageWidth
+  SavePrinterSetup = True
+  ShowAutoSearchDialog = True
+  TextFileType = ftFixedLength
+  Left = 320
+  Top = 325
+  Version = '7.0'
+  mmColumnWidth = 0
+  DataPipelineName = 'ESTOQUE'
+  object ppHeaderBand1: TppHeaderBand
+    mmBottomOffset = 0
+    mmHeight = 15610
+    mmPrintPosition = 0
+    object ppShape1: TppShape
+      UserName = 'Shape1'
+      mmHeight = 13229
+      mmLeft = 2381
+      mmTop = 2381
+      mmWidth = 193940
+      BandType = 0
+    end
+    object ppLabel1: TppLabel
+      UserName = 'Label1'
+      Caption = 'INVENTÁRIO TOTAL DO ESTOQUE'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 16
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 6844
+      mmLeft = 3440
+      mmTop = 3175
+      mmWidth = 107033
+      BandType = 0
+    end
+    object ppSystemVariable1: TppSystemVariable
+      UserName = 'SystemVariable1'
+      VarType = vtPageNo
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 16
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 6615
+      mmLeft = 191294
+      mmTop = 3440
+      mmWidth = 3969
+      BandType = 0
+    end
+    object ppDBText8: TppDBText
+      UserName = 'DBText8'
+      DataField = 'EMPRESA_NOME'
+      DataPipeline = daIBXQueryDataView1.ESTOQUE
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Arial'
+      Font.Size = 10
+      Font.Style = [fsBold]
+      Transparent = True
+      DataPipelineName = 'ESTOQUE'
+      mmHeight = 4233
+      mmLeft = 3440
+      mmTop = 10583
+      mmWidth = 101865
+      BandType = 0
+    end
+  end
+  object ppDetailBand1: TppDetailBand
+    mmBottomOffset = 0
+    mmHeight = 3440
+    mmPrintPosition = 0
+    object ppDBText1: TppDBText
+      UserName = 'DBText1'
+      DataField = 'BARRA'
+      DataPipeline = daIBXQueryDataView1.ESTOQUE
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'ESTOQUE'
+      mmHeight = 3440
+      mmLeft = 2381
+      mmTop = 0
+      mmWidth = 27517
+      BandType = 4
+    end
+    object ppDBText2: TppDBText
+      UserName = 'DBText2'
+      DataField = 'DESCRICAO'
+      DataPipeline = daIBXQueryDataView1.ESTOQUE
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      Transparent = True
+      DataPipelineName = 'ESTOQUE'
+      mmHeight = 3440
+      mmLeft = 32279
+      mmTop = 0
+      mmWidth = 93398
+      BandType = 4
+    end
+    object ppDBText3: TppDBText
+      UserName = 'DBText3'
+      DataField = 'QUANTIDADE'
+      DataPipeline = daIBXQueryDataView1.ESTOQUE
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'ESTOQUE'
+      mmHeight = 3440
+      mmLeft = 127529
+      mmTop = 0
+      mmWidth = 13229
+      BandType = 4
+    end
+    object ppDBText4: TppDBText
+      UserName = 'DBText4'
+      DataField = 'PRECOCUSTO'
+      DataPipeline = daIBXQueryDataView1.ESTOQUE
+      DisplayFormat = '#,0.00;(#,0.00)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'ESTOQUE'
+      mmHeight = 3440
+      mmLeft = 142875
+      mmTop = 0
+      mmWidth = 21696
+      BandType = 4
+    end
+    object ppDBText5: TppDBText
+      UserName = 'DBText5'
+      DataField = 'PRECOVENDA'
+      DataPipeline = daIBXQueryDataView1.ESTOQUE
+      DisplayFormat = '#,0.00;(#,0.00)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'ESTOQUE'
+      mmHeight = 3440
+      mmLeft = 167217
+      mmTop = 0
+      mmWidth = 26194
+      BandType = 4
+    end
+  end
+  object ppFooterBand1: TppFooterBand
+    mmBottomOffset = 0
+    mmHeight = 6879
+    mmPrintPosition = 0
+    object ppShape5: TppShape
+      UserName = 'Shape5'
+      mmHeight = 4498
+      mmLeft = 2381
+      mmTop = 2381
+      mmWidth = 193675
+      BandType = 8
+    end
+    object ppLabel15: TppLabel
+      UserName = 'Label15'
+      Caption = 'Sistema Empresa1 - copyright (c) 2002 Eliéser Morais'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 3440
+      mmLeft = 3440
+      mmTop = 2910
+      mmWidth = 93134
+      BandType = 8
+    end
+    object ppSystemVariable2: TppSystemVariable
+      UserName = 'SystemVariable2'
+      VarType = vtDateTime
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 3440
+      mmLeft = 157427
+      mmTop = 2910
+      mmWidth = 37042
+      BandType = 8
+    end
+  end
+  object ppSummaryBand1: TppSummaryBand
+    mmBottomOffset = 0
+    mmHeight = 13229
+    mmPrintPosition = 0
+    object ppShape4: TppShape
+      UserName = 'Shape4'
+      mmHeight = 8467
+      mmLeft = 2381
+      mmTop = 2381
+      mmWidth = 193940
+      BandType = 7
+    end
+    object ppLabel11: TppLabel
+      UserName = 'Label11'
+      Caption = 'TOTAL GERAL'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 16
+      Font.Style = [fsBold]
+      Transparent = True
+      mmHeight = 6879
+      mmLeft = 3440
+      mmTop = 3175
+      mmWidth = 43392
+      BandType = 7
+    end
+    object ppLabel12: TppLabel
+      UserName = 'Label12'
+      Caption = 'Média Margem'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 3440
+      mmLeft = 113242
+      mmTop = 3175
+      mmWidth = 27517
+      BandType = 7
+    end
+    object ppDBCalc4: TppDBCalc
+      UserName = 'DBCalc4'
+      DataField = 'LUCRO'
+      DataPipeline = daIBXQueryDataView1.ESTOQUE
+      DisplayFormat = '0.00 %'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DBCalcType = dcAverage
+      DataPipelineName = 'ESTOQUE'
+      mmHeight = 3440
+      mmLeft = 120915
+      mmTop = 6615
+      mmWidth = 19844
+      BandType = 7
+    end
+    object ppLabel13: TppLabel
+      UserName = 'Label13'
+      Caption = 'Total Custo'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 3440
+      mmLeft = 146579
+      mmTop = 3175
+      mmWidth = 17992
+      BandType = 7
+    end
+    object ppDBCalc5: TppDBCalc
+      UserName = 'DBCalc5'
+      DataField = 'TOTALCUSTO'
+      DataPipeline = daIBXQueryDataView1.ESTOQUE
+      DisplayFormat = '#,0.00;(#,0.00)'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'ESTOQUE'
+      mmHeight = 3440
+      mmLeft = 142082
+      mmTop = 6615
+      mmWidth = 22490
+      BandType = 7
+    end
+    object ppDBCalc6: TppDBCalc
+      UserName = 'DBCalc6'
+      DataField = 'TOTALVENDA'
+      DataPipeline = daIBXQueryDataView1.ESTOQUE
+      DisplayFormat = '#,0.00;(#,0.00)'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = []
+      TextAlignment = taRightJustified
+      Transparent = True
+      DataPipelineName = 'ESTOQUE'
+      mmHeight = 3440
+      mmLeft = 166423
+      mmTop = 6615
+      mmWidth = 26723
+      BandType = 7
+    end
+    object ppLabel14: TppLabel
+      UserName = 'Label101'
+      Caption = 'Total Venda'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Name = 'Verdana'
+      Font.Size = 8
+      Font.Style = [fsBold]
+      TextAlignment = taRightJustified
+      Transparent = True
+      mmHeight = 3440
+      mmLeft = 174096
+      mmTop = 3175
+      mmWidth = 19050
+      BandType = 7
+    end
+  end
+  object ppGroup1: TppGroup
+    BreakName = 'GRUPO'
+    DataPipeline = daIBXQueryDataView1.ESTOQUE
+    KeepTogether = True
+    OutlineSettings.CreateNode = True
+    UserName = 'Group1'
+    mmNewColumnThreshold = 0
+    mmNewPageThreshold = 0
+    DataPipelineName = 'ESTOQUE'
+    object ppGroupHeaderBand1: TppGroupHeaderBand
+      mmBottomOffset = 0
+      mmHeight = 15346
+      mmPrintPosition = 0
+      object ppLabel3: TppLabel
+        UserName = 'Label3'
+        Caption = 'Cód. de Barras'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 3440
+        mmLeft = 3175
+        mmTop = 11906
+        mmWidth = 26723
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel4: TppLabel
+        UserName = 'Label4'
+        Caption = 'Descrição'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3440
+        mmLeft = 32279
+        mmTop = 11906
+        mmWidth = 16933
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel5: TppLabel
+        UserName = 'Label5'
+        Caption = 'Quantidade'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 3440
+        mmLeft = 121444
+        mmTop = 11906
+        mmWidth = 19579
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel7: TppLabel
+        UserName = 'Label7'
+        Caption = 'Custo'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 3440
+        mmLeft = 155575
+        mmTop = 11906
+        mmWidth = 8996
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppLabel6: TppLabel
+        UserName = 'Label6'
+        Caption = 'Venda'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 3387
+        mmLeft = 183392
+        mmTop = 11906
+        mmWidth = 10019
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppShape3: TppShape
+        UserName = 'Shape3'
+        mmHeight = 8467
+        mmLeft = 2381
+        mmTop = 2381
+        mmWidth = 193940
+        BandType = 3
+        GroupNo = 0
+      end
+      object ppDBText6: TppDBText
+        UserName = 'DBText6'
+        DataField = 'GRUPO'
+        DataPipeline = daIBXQueryDataView1.ESTOQUE
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 16
+        Font.Style = [fsBold]
+        Transparent = True
+        DataPipelineName = 'ESTOQUE'
+        mmHeight = 6879
+        mmLeft = 3440
+        mmTop = 3175
+        mmWidth = 94456
+        BandType = 3
+        GroupNo = 0
+      end
+    end
+    object ppGroupFooterBand1: TppGroupFooterBand
+      mmBottomOffset = 0
+      mmHeight = 10848
+      mmPrintPosition = 0
+      object ppShape2: TppShape
+        UserName = 'Shape2'
+        mmHeight = 8467
+        mmLeft = 2381
+        mmTop = 2381
+        mmWidth = 193940
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppLabel2: TppLabel
+        UserName = 'Label2'
+        Caption = 'TOTAL DE'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 16
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 6844
+        mmLeft = 3440
+        mmTop = 3175
+        mmWidth = 30974
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppDBText7: TppDBText
+        UserName = 'DBText7'
+        DataField = 'GRUPO'
+        DataPipeline = daIBXQueryDataView1.ESTOQUE
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 16
+        Font.Style = [fsBold]
+        Transparent = True
+        DataPipelineName = 'ESTOQUE'
+        mmHeight = 6879
+        mmLeft = 35719
+        mmTop = 3175
+        mmWidth = 76465
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppLabel8: TppLabel
+        UserName = 'Label8'
+        Caption = 'Média Margem'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 3440
+        mmLeft = 113242
+        mmTop = 3175
+        mmWidth = 27517
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppDBCalc1: TppDBCalc
+        UserName = 'DBCalc1'
+        DataField = 'LUCRO'
+        DataPipeline = daIBXQueryDataView1.ESTOQUE
+        DisplayFormat = '0.00 %'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 8
+        Font.Style = []
+        ResetGroup = ppGroup1
+        TextAlignment = taRightJustified
+        Transparent = True
+        DBCalcType = dcAverage
+        DataPipelineName = 'ESTOQUE'
+        mmHeight = 3387
+        mmLeft = 120915
+        mmTop = 6615
+        mmWidth = 19844
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppLabel9: TppLabel
+        UserName = 'Label9'
+        Caption = 'Total Custo'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 3387
+        mmLeft = 146650
+        mmTop = 3175
+        mmWidth = 17921
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppDBCalc2: TppDBCalc
+        UserName = 'DBCalc2'
+        DataField = 'TOTALCUSTO'
+        DataPipeline = daIBXQueryDataView1.ESTOQUE
+        DisplayFormat = '#,0.00;(#,0.00)'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 8
+        Font.Style = []
+        ResetGroup = ppGroup1
+        TextAlignment = taRightJustified
+        Transparent = True
+        DataPipelineName = 'ESTOQUE'
+        mmHeight = 3440
+        mmLeft = 142082
+        mmTop = 6615
+        mmWidth = 22490
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppLabel10: TppLabel
+        UserName = 'Label10'
+        Caption = 'Total Venda'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 3387
+        mmLeft = 174432
+        mmTop = 3175
+        mmWidth = 18979
+        BandType = 5
+        GroupNo = 0
+      end
+      object ppDBCalc3: TppDBCalc
+        UserName = 'DBCalc3'
+        DataField = 'TOTALVENDA'
+        DataPipeline = daIBXQueryDataView1.ESTOQUE
+        DisplayFormat = '#,0.00;(#,0.00)'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Verdana'
+        Font.Size = 8
+        Font.Style = []
+        ResetGroup = ppGroup1
+        TextAlignment = taRightJustified
+        Transparent = True
+        DataPipelineName = 'ESTOQUE'
+        mmHeight = 3440
+        mmLeft = 166688
+        mmTop = 6615
+        mmWidth = 26723
+        BandType = 5
+        GroupNo = 0
+      end
+    end
+  end
+  object daDataModule1: TdaDataModule
+    object daIBXQueryDataView1: TdaIBXQueryDataView
+      UserName = 'Query_ESTOQUE'
+      Height = 228
+      Left = 10
+      NameColumnWidth = 105
+      SizeColumnWidth = 35
+      SortMode = 0
+      Top = 10
+      TypeColumnWidth = 52
+      Width = 200
+      AutoSearchTabOrder = 0
+      object ESTOQUE: TppChildDBPipeline
+        AutoCreateFields = False
+        UserName = 'ESTOQUE'
+        object ppField1: TppField
+          FieldAlias = 'BARRA'
+          FieldName = 'BARRA'
+          FieldLength = 14
+          DisplayWidth = 14
+          Position = 0
+          TableName = 'ESTOQUE_1'
+        end
+        object ppField2: TppField
+          FieldAlias = 'DESCRICAO'
+          FieldName = 'DESCRICAO'
+          FieldLength = 60
+          DisplayWidth = 60
+          Position = 1
+          TableName = 'ESTOQUE_1'
+        end
+        object ppField3: TppField
+          FieldAlias = 'PRECOCUSTO'
+          FieldName = 'PRECOCUSTO'
+          FieldLength = 2
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 2
+          TableName = 'ESTOQUE_1'
+        end
+        object ppField4: TppField
+          FieldAlias = 'PRECOVENDA'
+          FieldName = 'PRECOVENDA'
+          FieldLength = 2
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 3
+          TableName = 'ESTOQUE_1'
+        end
+        object ppField5: TppField
+          FieldAlias = 'TOTALCUSTO'
+          FieldName = 'TOTALCUSTO'
+          FieldLength = 2
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 4
+          TableName = 'ESTOQUE_1'
+        end
+        object ppField6: TppField
+          FieldAlias = 'TOTALVENDA'
+          FieldName = 'TOTALVENDA'
+          FieldLength = 2
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 5
+          TableName = 'ESTOQUE_1'
+        end
+        object ppField7: TppField
+          FieldAlias = 'GRUPO'
+          FieldName = 'GRUPO'
+          FieldLength = 40
+          DisplayWidth = 40
+          Position = 6
+          TableName = 'ESTOQUE_1'
+        end
+        object ppField8: TppField
+          FieldAlias = 'QUANTIDADE'
+          FieldName = 'QUANTIDADE'
+          FieldLength = 2
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 7
+          TableName = 'ESTOQUE_1'
+        end
+        object ppField9: TppField
+          FieldAlias = 'LUCRO'
+          FieldName = 'LUCRO'
+          FieldLength = 4
+          DataType = dtDouble
+          DisplayWidth = 10
+          Position = 8
+          TableName = 'ESTOQUE_1'
+        end
+        object ppField10: TppField
+          FieldAlias = 'EMPRESA_NOME'
+          FieldName = 'EMPRESA_NOME'
+          FieldLength = 50
+          DisplayWidth = 50
+          Position = 9
+          TableName = 'ESTOQUE_1'
+        end
+      end
+      object daSQL1: TdaSQL
+        CollationType = ctASCII
+        DatabaseName = 'Database'
+        DatabaseType = dtInterBase
+        DataPipelineName = 'ESTOQUE'
+        IsCaseSensitive = True
+        LinkColor = clMaroon
+        MaxSQLFieldAliasLength = 25
+        SQLText.Strings = (
+          'SELECT ESTOQUE_1.BARRA, ESTOQUE_1.DESCRICAO, '
+          '       ESTOQUE_1.PRECOCUSTO, '
+          '       ESTOQUE_1.PRECOVENDA, '
+          '       ESTOQUE_1.TOTALCUSTO, '
+          '       ESTOQUE_1.TOTALVENDA, ESTOQUE_1.GRUPO, '
+          '       ESTOQUE_1.QUANTIDADE, ESTOQUE_1.LUCRO, '
+          '       ESTOQUE_1.EMPRESA_NOME'
+          'FROM ESTOQUE ESTOQUE_1'
+          'WHERE ( ESTOQUE_1.OCULTO = '#39'N'#39' )'
+          'ORDER BY ESTOQUE_1.GRUPO, ESTOQUE_1.DESCRICAO')
+        SQLType = sqSQL2
+        object daCriteria1: TdaCriteria
+          ChildType = 7
+          Level = 0
+          Operator = dacoLike
+          object TdaField
+            Alias = 'DESCRICAO'
+            AutoSearch = True
+            DisplayWidth = 60
+            FieldAlias = 'DESCRICAO'
+            FieldLength = 60
+            FieldName = 'DESCRICAO'
+            SQLFieldName = 'DESCRICAO'
+            TableAlias = 'ESTOQUE'
+            TableName = 'ESTOQUE'
+            TableSQLAlias = 'ESTOQUE_1'
+          end
+        end
+        object daCriteria2: TdaCriteria
+          ChildType = 7
+          Level = 0
+          Value = 'N'
+          object TdaField
+            Alias = 'OCULTO'
+            AutoSearch = True
+            DisplayWidth = 1
+            FieldAlias = 'OCULTO'
+            FieldLength = 1
+            FieldName = 'OCULTO'
+            SQLFieldName = 'OCULTO'
+            TableAlias = 'ESTOQUE'
+            TableName = 'ESTOQUE'
+            TableSQLAlias = 'ESTOQUE_1'
+          end
+        end
+        object daCriteria3: TdaCriteria
+          ChildType = 7
+          Level = 0
+          Operator = dacoInList
+          object TdaField
+            Alias = 'GRUPO'
+            AutoSearch = True
+            DisplayWidth = 40
+            FieldAlias = 'GRUPO'
+            FieldLength = 40
+            FieldName = 'GRUPO'
+            SQLFieldName = 'GRUPO'
+            TableAlias = 'ESTOQUE'
+            TableName = 'ESTOQUE'
+            TableSQLAlias = 'ESTOQUE_1'
+          end
+        end
+        object daCriteria4: TdaCriteria
+          ChildType = 7
+          Level = 0
+          object TdaField
+            Alias = 'CODEMPRESA'
+            AutoSearch = True
+            DataType = dtInteger
+            DisplayWidth = 10
+            FieldAlias = 'CODEMPRESA'
+            FieldLength = 0
+            FieldName = 'CODEMPRESA'
+            Mandatory = True
+            SQLFieldName = 'CODEMPRESA'
+            TableAlias = 'ESTOQUE'
+            TableName = 'ESTOQUE'
+            TableSQLAlias = 'ESTOQUE_1'
+          end
+        end
+        object daField1: TdaField
+          Alias = 'BARRA'
+          DisplayWidth = 14
+          FieldAlias = 'BARRA'
+          FieldLength = 14
+          FieldName = 'BARRA'
+          SQLFieldName = 'BARRA'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daField2: TdaField
+          Alias = 'DESCRICAO'
+          DisplayWidth = 60
+          FieldAlias = 'DESCRICAO'
+          FieldLength = 60
+          FieldName = 'DESCRICAO'
+          SQLFieldName = 'DESCRICAO'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daField3: TdaField
+          Alias = 'PRECOCUSTO'
+          DataType = dtDouble
+          DisplayWidth = 10
+          FieldAlias = 'PRECOCUSTO'
+          FieldLength = 2
+          FieldName = 'PRECOCUSTO'
+          SQLFieldName = 'PRECOCUSTO'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daField4: TdaField
+          Alias = 'PRECOVENDA'
+          DataType = dtDouble
+          DisplayWidth = 10
+          FieldAlias = 'PRECOVENDA'
+          FieldLength = 2
+          FieldName = 'PRECOVENDA'
+          SQLFieldName = 'PRECOVENDA'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daField5: TdaField
+          Alias = 'TOTALCUSTO'
+          DataType = dtDouble
+          DisplayWidth = 10
+          FieldAlias = 'TOTALCUSTO'
+          FieldLength = 2
+          FieldName = 'TOTALCUSTO'
+          SQLFieldName = 'TOTALCUSTO'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daField6: TdaField
+          Alias = 'TOTALVENDA'
+          DataType = dtDouble
+          DisplayWidth = 10
+          FieldAlias = 'TOTALVENDA'
+          FieldLength = 2
+          FieldName = 'TOTALVENDA'
+          SQLFieldName = 'TOTALVENDA'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daField7: TdaField
+          Alias = 'GRUPO'
+          DisplayWidth = 40
+          FieldAlias = 'GRUPO'
+          FieldLength = 40
+          FieldName = 'GRUPO'
+          SQLFieldName = 'GRUPO'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daField8: TdaField
+          Alias = 'QUANTIDADE'
+          DataType = dtDouble
+          DisplayWidth = 10
+          FieldAlias = 'QUANTIDADE'
+          FieldLength = 2
+          FieldName = 'QUANTIDADE'
+          SQLFieldName = 'QUANTIDADE'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daField9: TdaField
+          Alias = 'LUCRO'
+          DataType = dtDouble
+          DisplayWidth = 10
+          FieldAlias = 'LUCRO'
+          FieldLength = 4
+          FieldName = 'LUCRO'
+          SQLFieldName = 'LUCRO'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daField10: TdaField
+          Alias = 'EMPRESA_NOME'
+          DisplayWidth = 50
+          FieldAlias = 'EMPRESA_NOME'
+          FieldLength = 50
+          FieldName = 'EMPRESA_NOME'
+          SQLFieldName = 'EMPRESA_NOME'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daField11: TdaField
+          ChildType = 2
+          Alias = 'GRUPO'
+          DisplayWidth = 40
+          FieldAlias = 'GRUPO'
+          FieldLength = 40
+          FieldName = 'GRUPO'
+          SQLFieldName = 'GRUPO'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daField12: TdaField
+          ChildType = 2
+          Alias = 'DESCRICAO'
+          DisplayWidth = 60
+          FieldAlias = 'DESCRICAO'
+          FieldLength = 60
+          FieldName = 'DESCRICAO'
+          SQLFieldName = 'DESCRICAO'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+          TableSQLAlias = 'ESTOQUE_1'
+        end
+        object daTable1: TdaTable
+          ChildType = 5
+          Alias = 'ESTOQUE'
+          JoinType = dajtNone
+          SQLAlias = 'ESTOQUE_1'
+          TableAlias = 'ESTOQUE'
+          TableName = 'ESTOQUE'
+        end
+      end
+    end
+  end
+end

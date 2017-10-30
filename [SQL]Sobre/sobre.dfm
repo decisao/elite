@@ -1,0 +1,340 @@
+object formSobre: TformSobre
+  Left = 105
+  Top = 147
+  Width = 544
+  Height = 375
+  BorderIcons = [biSystemMenu]
+  Caption = 'Sobre... Projeto Empresa1'
+  Color = clBtnFace
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Verdana'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 329
+    Width = 536
+    Height = 19
+    Panels = <>
+    SimplePanel = False
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 536
+    Height = 329
+    ActivePage = TabSheet1
+    Align = alClient
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = '&Empresa1'
+      object Panel1: TPanel
+        Left = 0
+        Top = 0
+        Width = 528
+        Height = 61
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 0
+        object Label1: TLabel
+          Left = 8
+          Top = 8
+          Width = 90
+          Height = 13
+          Caption = 'Bem-vindo ao'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Verdana'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label2: TLabel
+          Left = 24
+          Top = 20
+          Width = 448
+          Height = 29
+          Caption = 'Sistema Empresa1 para Windows'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -24
+          Font.Name = 'Verdana'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+      end
+      object PageControl3: TPageControl
+        Left = 0
+        Top = 61
+        Width = 528
+        Height = 240
+        ActivePage = TabSheet8
+        Align = alClient
+        Style = tsFlatButtons
+        TabOrder = 1
+        OnChange = PageControl3Change
+        object TabSheet8: TTabSheet
+          Caption = '&Licenciamento'
+          object Label3: TLabel
+            Left = 16
+            Top = 8
+            Width = 190
+            Height = 13
+            Caption = 'Este produto está licenciado para'
+          end
+          object DBText1: TDBText
+            Left = 16
+            Top = 24
+            Width = 369
+            Height = 17
+            DataField = 'NOME'
+            DataSource = dsrCliente
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clNavy
+            Font.Height = -12
+            Font.Name = 'Verdana'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object DBText2: TDBText
+            Left = 16
+            Top = 37
+            Width = 369
+            Height = 17
+            DataField = 'RAZAOSOCIAL'
+            DataSource = dsrCliente
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clNavy
+            Font.Height = -12
+            Font.Name = 'Verdana'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object DBText3: TDBText
+            Left = 16
+            Top = 77
+            Width = 369
+            Height = 17
+            DataField = 'EMAIL'
+            DataSource = dsrCliente
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clNavy
+            Font.Height = -12
+            Font.Name = 'Verdana'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object DBText4: TDBText
+            Left = 16
+            Top = 61
+            Width = 369
+            Height = 17
+            DataField = 'FONE'
+            DataSource = dsrCliente
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clNavy
+            Font.Height = -12
+            Font.Name = 'Verdana'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label4: TLabel
+            Left = 16
+            Top = 104
+            Width = 473
+            Height = 57
+            AutoSize = False
+            Caption = 
+              'De acordo com a lei vigente, a cópia, engenharia reversa, inclui' +
+              'ndo a modificação, são infrações que tem penalidades previstas e' +
+              'm lei: busca e apreenção de cópias ilegais e multa de até 2000 (' +
+              'duas mil) vezes o valor do software. Seja legal. Use software or' +
+              'iginal. '
+            WordWrap = True
+          end
+        end
+        object tabCreditos: TTabSheet
+          Caption = 'Créditos'
+          ImageIndex = 1
+          object Label5: TLabel
+            Left = 16
+            Top = 8
+            Width = 183
+            Height = 13
+            Caption = 'Desenvolvido por Eliéser Morais'
+          end
+          object Label6: TLabel
+            Left = 16
+            Top = 40
+            Width = 61
+            Height = 13
+            Caption = '1999-2003'
+          end
+          object Label7: TLabel
+            Left = 16
+            Top = 24
+            Width = 165
+            Height = 13
+            Caption = 'Todos os direitos reservados'
+          end
+          object SecretPanel1: TSecretPanel
+            Left = 208
+            Top = 8
+            Width = 305
+            Height = 185
+            Lines.Strings = (
+              'Projetado e Desenvolvido por'
+              'Eliéser Morais'
+              ''
+              'Copyright (c) 1999-2005 '
+              'Todos os direitos reservados'
+              ''
+              ''
+              ''
+              'Agradecimentos'
+              ''
+              'Ao time de desenvolvimento do NCSA da NASA'
+              'pela contribuição em tornar popular o TCP/IP'
+              'que é a base de todo projeto de conectividade'
+              'em nosso tempo.'
+              'ftp://ftp.ncsa.uiuc.edu/Web/httpd'
+              ''
+              'Ao Dave Fuller'
+              'Borland Chairman and President'
+              'Por suas ações que, inicialmente contestadas,'
+              'tornaram viável o desenvolvimento '
+              'desse projeto'
+              'http://www.borland.com'
+              ''
+              'Ao time de desenvolvimento do Interbase!'
+              'http://www.borland.com/interbase'
+              ''
+              'Ao Torry!'
+              'http://www.torry.net'
+              ''
+              'Ao Fausto!'
+              ''
+              'Ao todos da'
+              'SERVTEC TELECOM'
+              'pela oportunidade, paciência e apoio'
+              'http://www.servtectelecom.com.br'
+              ''
+              'A você!'
+              'por testar, usar e contribuir neste projeto'
+              ''
+              ''
+              '')
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clMaroon
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            OnDblClick = SecretPanel1DblClick
+          end
+        end
+        object TabSheet10: TTabSheet
+          Caption = 'Suporte Técnico'
+          ImageIndex = 2
+          object Label8: TLabel
+            Left = 16
+            Top = 8
+            Width = 481
+            Height = 17
+            AutoSize = False
+            Caption = 'Para suporte técnico, entre em contato com o autor:'
+          end
+          object Label9: TLabel
+            Left = 16
+            Top = 32
+            Width = 481
+            Height = 17
+            AutoSize = False
+            Caption = 'suporte@empresa1.net'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clMaroon
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label25: TLabel
+            Left = 16
+            Top = 120
+            Width = 424
+            Height = 13
+            Caption = 
+              'Ao entrar em contato com o suporte, envie também a informação ab' +
+              'aixo:'
+          end
+          object lbVersion: TLabel
+            Left = 16
+            Top = 136
+            Width = 61
+            Height = 13
+            Caption = 'lbVersion'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label11: TLabel
+            Left = 16
+            Top = 56
+            Width = 481
+            Height = 17
+            AutoSize = False
+            Caption = 'Celular (16) 8121-2555'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clMaroon
+            Font.Height = -11
+            Font.Name = 'Verdana'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+        end
+      end
+    end
+  end
+  object dsrCliente: TDataSource
+    DataSet = dmoPrincipal.cdsCliente
+    Left = 324
+    Top = 81
+  end
+  object traVersao: TIBTransaction
+    Active = False
+    DefaultDatabase = dmoPrincipal.Database
+    Params.Strings = (
+      'read'
+      'read_committed'
+      'rec_version'
+      'wait')
+    AutoStopAction = saCommit
+    Left = 420
+    Top = 80
+  end
+  object qryVersao: TIBQuery
+    Database = dmoPrincipal.Database
+    Transaction = traVersao
+    BufferChunks = 1000
+    CachedUpdates = False
+    SQL.Strings = (
+      'SELECT'
+      '  MAX(NUMERO) AS NUMERO,'
+      '  MAX(DATA) AS DATA'
+      'FROM'
+      '  SCRIPTVER')
+    UniDirectional = True
+    Left = 416
+    Top = 128
+  end
+end

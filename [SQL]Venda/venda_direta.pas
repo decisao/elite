@@ -1,0 +1,1168 @@
+unit venda_direta;
+
+interface
+
+{x$DEFINE DARUMA}
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Grids, DBGrids, zebdbgrid, ToolEdit, CurrEdit, StdCtrls, DBCtrls,
+  Buttons, Mask, ExtCtrls, RXDBCtrl, db, ActnList, RxDBComb, DBCGrids,
+  ComCtrls, ComCtrls95, Menus, RXCtrls, ZRCtrls, ZRPrntr, TB97Tlbr,
+  TB97Ctls, TB97, IBCustomDataSet, IBQuery, IBDatabase;
+
+const
+  CM_FORMSETUP = WM_USER + 1;
+
+type
+  TformVendaDireta = class(TForm)
+    ActionList: TActionList;
+    actClientes: TAction;
+    actVendedores: TAction;
+    actBarras: TAction;
+    actNovoProduto: TAction;
+    actGravaProduto: TAction;
+    actCancelaProduto: TAction;
+    pgcDados: TPageControl;
+    tabItens: TTabSheet;
+    tabFatura: TTabSheet;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    Label4: TLabel;
+    Label7: TLabel;
+    DBText3: TDBText;
+    DBEdit4: TDBEdit;
+    DBEdit8: TDBEdit;
+    Panel5: TPanel;
+    lblBarras: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    DBMemo2: TDBMemo;
+    dedBARRA: TDBEdit;
+    RxDBCalcEdit1: TRxDBCalcEdit;
+    RxDBCalcEdit2: TRxDBCalcEdit;
+    RxDBCalcEdit3: TRxDBCalcEdit;
+    zebdbgrid1: Tzebdbgrid;
+    Panel6: TPanel;
+    Label6: TLabel;
+    DBText1: TDBText;
+    DBEdit3: TDBEdit;
+    DBEdit9: TDBEdit;
+    Panel8: TPanel;
+    Panel10: TPanel;
+    DBCtrlGrid1: TDBCtrlGrid;
+    DBDateEdit1: TDBDateEdit;
+    DBText4: TDBText;
+    Label15: TLabel;
+    DBEdit17: TDBEdit;
+    Label16: TLabel;
+    DBEdit18: TDBEdit;
+    Label17: TLabel;
+    DBEdit19: TDBEdit;
+    Label18: TLabel;
+    DBEdit20: TDBEdit;
+    btnContinuar2: TButton;
+    actNatuoper: TAction;
+    actTranportador: TAction;
+    Label8: TLabel;
+    DBEdit21: TDBEdit;
+    Label14: TLabel;
+    DBEdit22: TDBEdit;
+    Label19: TLabel;
+    DBEdit23: TDBEdit;
+    Label20: TLabel;
+    DBEdit24: TDBEdit;
+    Label21: TLabel;
+    DBEdit25: TDBEdit;
+    Label22: TLabel;
+    DBEdit26: TDBEdit;
+    Label23: TLabel;
+    DBEdit27: TDBEdit;
+    Label24: TLabel;
+    DBEdit28: TDBEdit;
+    Panel9: TPanel;
+    Page95Control1: TPage95Control;
+    Tab95Sheet1: TTab95Sheet;
+    Tab95Sheet2: TTab95Sheet;
+    lblTransportador: TLabel;
+    DBEdit13: TDBEdit;
+    DBEdit16: TDBEdit;
+    DBRadioGroup1: TDBRadioGroup;
+    Label25: TLabel;
+    DBEdit29: TDBEdit;
+    Label26: TLabel;
+    DBEdit30: TDBEdit;
+    Label27: TLabel;
+    DBEdit31: TDBEdit;
+    Label28: TLabel;
+    DBEdit32: TDBEdit;
+    Label29: TLabel;
+    DBEdit33: TDBEdit;
+    Label30: TLabel;
+    DBEdit34: TDBEdit;
+    DBEdit35: TDBEdit;
+    Label31: TLabel;
+    Label32: TLabel;
+    DBEdit36: TDBEdit;
+    DBMemo3: TDBMemo;
+    Label33: TLabel;
+    DBText5: TDBText;
+    GridMenu: TPopupMenu;
+    CancelarItem1: TMenuItem;
+    btnAnterior3: TButton;
+    btnFinal: TButton;
+    ckFechar: TCheckBox;
+    ckICMSSIMP: TDBCheckBox;
+    edtICMSSIMP: TDBEdit;
+    Label34: TLabel;
+    Label3: TLabel;
+    DBEdit37: TDBEdit;
+    Label37: TLabel;
+    Label38: TLabel;
+    Label40: TLabel;
+    tabDados: TTabSheet;
+    Panel1: TPanel;
+    lblCLIENTE: TLabel;
+    DBText2: TDBText;
+    dedENTRADACLI: TDBEdit;
+    DBEdit15: TDBEdit;
+    Panel11: TPanel;
+    DBText6: TDBText;
+    DBEdit2: TDBEdit;
+    Panel12: TPanel;
+    btnContinuar1: TButton;
+    Panel13: TPanel;
+    DBCtrlGrid2: TDBCtrlGrid;
+    DataSource: TDataSource;
+    DBEdit41: TDBEdit;
+    DBEdit42: TDBEdit;
+    DBEdit43: TDBEdit;
+    btnAnterior2: TButton;
+    Label2: TLabel;
+    Panel14: TPanel;
+    Dock972: TDock97;
+    Toolbar972: TToolbar97;
+    btnSair: TToolbarButton97;
+    ToolbarSep971: TToolbarSep97;
+    btnAdicionar: TToolbarButton97;
+    Label5: TLabel;
+    Label36: TLabel;
+    Label41: TLabel;
+    Label42: TLabel;
+    Label43: TLabel;
+    Label44: TLabel;
+    DBEdit47: TDBEdit;
+    Label45: TLabel;
+    DBEdit48: TDBEdit;
+    traHistorico: TIBTransaction;
+    qryHistorico: TIBQuery;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBLookupComboBox2: TDBLookupComboBox;
+    DBEdit14: TDBEdit;
+    DBLookupComboBox3: TDBLookupComboBox;
+    lblVendedor: TLabel;
+    DBEdit5: TDBEdit;
+    procedure lblCLIENTEClick(Sender: TObject);
+    procedure lblVendedorClick(Sender: TObject);
+    procedure lblBarrasClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure dedBARRAEnter(Sender: TObject);
+    procedure dedCODCLIENTEEnter(Sender: TObject);
+    procedure dedCODCLIENTEExit(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure actNovoProdutoExecute(Sender: TObject);
+    procedure actGravaProdutoExecute(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure btnContinuar2Click(Sender: TObject);
+    procedure lblNatuoperClick(Sender: TObject);
+    procedure lblTransportadorClick(Sender: TObject);
+    procedure CancelarItem1Click(Sender: TObject);
+    procedure btnAnterior3Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure ckFecharClick(Sender: TObject);
+    procedure btnFinalMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);
+    procedure DBEdit5KeyPress(Sender: TObject; var Key: Char);
+    procedure DBEdit17KeyPress(Sender: TObject; var Key: Char);
+    procedure Label34Click(Sender: TObject);
+    procedure Label35Click(Sender: TObject);
+    procedure Label36Click(Sender: TObject);
+    procedure btnContinuar1Click(Sender: TObject);
+    procedure btnAnterior2Click(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure pgcDadosChange(Sender: TObject);
+    procedure Label5Click(Sender: TObject);
+    procedure Label43Click(Sender: TObject);
+    procedure btnAdicionarClick(Sender: TObject);
+    procedure btnSairClick(Sender: TObject);
+    procedure dedENTRADACLIEnter(Sender: TObject);
+  private
+    { Private declarations }
+    fechamento_anormal: boolean;
+    procedure FormStart(var Message: TMessage); message CM_FORMSETUP;
+  public
+    { Public declarations }
+    inOS: longint;
+    inCliente: longint;
+    inBarra,
+    inNatureza: string;
+  end;
+
+var
+  formVendaDireta: TformVendaDireta;
+
+
+implementation
+
+uses venda_data, clientes, produtos, data_principal, natuoper,
+  DOSPrint, notafiscal, os_nota, servicos, imprimirNota,
+  imprimirosfechada, veiculos, clientehistorico, confirmasenha,
+  consulta_produto;
+
+{$R *.DFM}
+
+procedure TformVendaDireta.FormStart(var Message: TMessage);
+var
+  descricao: string;
+  desconto: extended;
+  valor_itens, valor_servicos: extended;
+begin
+
+  ckFechar.Enabled := dmoPrincipal.cdsVendedor.fieldByName('FECHAMENTO').AsString = 'S';
+
+  try
+
+   valor_itens    := 0.0;
+   valor_servicos := 0.0;
+
+   with dataVenda do
+    begin
+
+     stNatureza := inNatureza;
+
+     { limpo MemItens }
+     if memITENS.Active then memITENS.Close;
+     memITENS.Open;
+
+     { limpo qryMovimentos }
+     if qryMovimentos.Active then qryMovimentos.Close;
+
+     { contagem de Produtos e Serviços }
+     maxProdutos := 0;
+     maxServicos := 0;
+
+     { venda nova! }
+     if inOS = 0 then
+      begin
+
+        { saida nova - sem continuacao }
+        qryMovimentos.paramByName('CODIGO').Clear;
+        qryMovimentos.Open;
+        qryMovimentos.Insert;
+        qryMovimentos.Post;
+
+      end else
+      begin
+
+        { coloco no primeiro painel }
+        if (inCliente = 0) and (inBarra = '') and
+           (dmoPrincipal.cdsVendedor.fieldByName('TECNICOLOGIN').AsString = 'N') then
+          with pgcDados do
+           begin
+            tabDados.TabVisible := True;
+            tabDados.Caption := 'Dados da venda';
+            ActivePage := Pages[0];
+            tabItens.TabVisible := False;
+            tabFatura.TabVisible := False;
+           end;
+
+        { Lançamento de OS }
+        qryMovimentos.paramByName('CODIGO').AsInteger := inOS;
+        qryMovimentos.Open;
+
+        { Leio os item previamente lançados, se houver! }
+        inLoad := 1;
+        with qryLoadItens do
+         begin
+          open;
+          while not EOF do
+           begin
+
+            descricao := fieldByName('DESCRICAO').AsString;
+            if fieldByName('UNICO').AsString = 'S' then
+              descricao := descricao + ' - ' +
+                   fieldByName('SERIE').AsString;
+            if fieldByName('VALOR_VENDA').AsFloat > 0 then
+              desconto :=
+                ((fieldByName('DESCONTO').AsFloat * 100) / fieldByName('VALOR_VENDA').AsFloat)
+            else
+              desconto := 0;
+
+            memItens.InsertRecord([
+              null,
+              fieldByName('BARRA').AsString,
+              descricao,
+              fieldByName('QUANTIDADE').AsFloat,
+              fieldByName('VALOR_VENDA').AsFloat,
+              fieldByName('VALOR_PAGO').AsFloat,
+              desconto,
+              null,
+              fieldByName('PS').AsString
+            ]);
+
+            { calculo os totais }
+            if fieldByName('PS').AsString = 'S' then
+              valor_servicos := valor_servicos +
+                 fieldByName('VALOR_PAGO').AsCurrency
+            else
+              valor_itens := valor_itens +
+                 fieldByName('VALOR_PAGO').AsCurrency;
+
+            { proximo }
+            next;
+           end;
+          close;
+         end;
+        InLoad := 0;
+      end;
+
+     { verifico se o ICMS eh ou nao eh simples }
+     ckICMSSIMP.Visible :=
+         qryMovimentos.fieldByName('ICMSSIMPLES').AsString = 'S';
+     edtICMSSIMP.Visible := ckICMSSIMP.Visible;
+
+     if dmoPrincipal.GetLogUser = 'SYSDBA' then
+       lblVendedor.Enabled := True;
+
+     if dmoPrincipal.cdsVendedor.fieldByName('TROCAVENDEDOR').AsString = 'S' then
+       lblVendedor.Enabled := True;
+
+
+     qryMovimentos.Edit;
+
+     { zero os totais }
+     qryMovimentos.fieldByName('VALOR_ITENS').AsCurrency    := valor_itens;
+     qryMOvimentos.fieldByName('VALOR_SERVICOS').AsCurrency := valor_servicos;
+
+     if (inCliente > 0) or
+        (dmoPrincipal.cdsVendedor.fieldByName('TECNICOLOGIN').AsString = 'S') then
+      begin
+       btnAnterior2.Visible := False;
+       btnContinuar2.Enabled := True;
+       tabDados.TabVisible := False;
+       tabFatura.TabVisible := False;
+       if inCliente > 0 then
+         qryMovimentos.fieldByName('CODCLIENTE').AsInteger := inCliente;
+       dedBarra.SetFocus;
+      end;
+
+
+    end;
+
+   { faço o botão visivel }
+   btnContinuar1.Enabled := True;
+
+{$IFDEF DARUMA}
+   ckFechar.checked := True;
+   ckFechar.enabled := False;
+{$ENDIF}
+
+  except
+   on exception do
+    begin
+      ShowMessage('Atenção:' + #13#10#13#10 +
+        'Essa baixa apresentou um problema e você não poderá continuar. ' +
+        'Por favor, entre em contato com o suporte técnico e informe o ' +
+        'número da OS/Venda que você está tentando baixar.');
+      close;
+    end;
+  end;
+
+
+ if inBarra > '' then
+  begin
+   btnAnterior2.Visible := False;
+   btnContinuar2.Enabled := True;
+   tabDados.TabVisible := False;
+   tabFatura.TabVisible := False;
+   dedBarra.SetFocus;
+   dedBarra.Text := inBarra;
+   inBarra := '';
+   RxDBCalcEdit1.SetFocus;
+  end else if inOS = 0 then
+   begin
+    btnAnterior2.Visible := False;
+    btnContinuar2.Enabled := True;
+    tabDados.TabVisible := False;
+    tabFatura.TabVisible := False;
+    dedBarra.SetFocus;
+   end;
+
+end;
+
+procedure TformVendaDireta.lblCLIENTEClick(Sender: TObject);
+begin
+     Screen.Cursor := crHourGlass;
+     with TformClientes.Create(Self) do
+      try
+       Caption := Self.Caption + ' -> ' + Caption;
+
+       { JumpStart }
+       if dataVenda.qryMovimentos.fieldByName('CODCLIENTE').AsInteger <>
+         dmoPrincipal.cdsConfig.fieldByName('CODCLIENTE_PADRAO').AsInteger then
+           inCliente := dataVenda.qryMovimentos.fieldByName('CODCLIENTE').AsInteger
+       else
+           inCliente := 0;
+
+       ShowModal;
+       if (ModalResult = mrOk) and (cdsSelecionar.Active) then
+         dataVenda.qryMovimentos.fieldByName('CODCLIENTE').AsInteger :=
+           cdsSelecionar.fieldByName('CODIGO').AsInteger;
+      finally
+       release;
+      end;
+
+      with qryHistorico do
+       begin
+         if active then close;
+         open;
+       end;
+
+      if qryHistorico.fieldByName('BLOQUEIO').AsString = 'S' then
+       begin
+         with TformClienteHistorico.Create(Self) do
+          try
+           inCliente := dataVenda.qryMovimentos.fieldByName('CODCLIENTE').AsInteger;
+           Caption := Self.Caption + ' -> ' + Caption;
+           ShowModal;
+          finally
+           release;
+          end;
+
+         if dmoPrincipal.cdsVendedor.fieldByName('FINANCEIRO').AsString = 'S' then
+          begin
+            if Application.MessageBox('Essa pergunta foi exibida porque você ' +
+                'tem acesso a privilégios financeiros do sistema, e o cliente ' +
+                'selecionado está bloqueado conforme o sistema foi instruído.' + #13#10#13#10 +
+                'Deseja liberar esse cliente?',
+                'Liberar cliente',
+                mb_YesNo + mb_IconQuestion + mb_DefButton2) = IDNO then
+            dataVenda.qryMovimentos.fieldByName('CODCLIENTE').Clear;
+
+          end else dataVenda.qryMovimentos.fieldByName('CODCLIENTE').Clear;
+       end;
+
+end;
+
+procedure TformVendaDireta.lblVendedorClick(Sender: TObject);
+begin
+     Screen.Cursor := crHourGlass;
+     with TformClientes.Create(Self) do
+      try
+       Caption := Self.Caption + ' -> ' + Caption;
+
+       { JumpStart }
+       inCliente := dataVenda.qryMovimentos.fieldByName('CODRESPONSAVEL').AsInteger;
+
+       SetWhereDynamic('(TIPO = ''A'')', '');
+       ShowModal;
+       if (ModalResult = mrOk) and (cdsSelecionar.Active) then
+         dataVenda.qryMovimentos.fieldByName('CODRESPONSAVEL').AsInteger :=
+           cdsSelecionar.fieldByName('CODIGO').AsInteger;
+      finally
+       release;
+      end;
+end;
+
+procedure TformVendaDireta.lblBarrasClick(Sender: TObject);
+begin
+   Screen.Cursor := crHourGlass;
+   with TformProdutos.Create(Self) do
+    try
+     ShowModal;
+     if (ModalResult = mrOk) and (qrySelecionar.Active) then
+      with dataVenda.memItens do
+       begin
+        if State = dsInsert then cancel;
+        Append;
+        fieldByName('BARRA').AsString :=
+            qrySelecionar.fieldByName('BARRA').AsString;
+       end;
+    finally
+     release;
+    end;
+   RxDBCalcEdit1.SetFocus;
+end;
+
+procedure TformVendaDireta.FormShow(Sender: TObject);
+begin
+  PostMessage(Handle, CM_FORMSETUP, 0, 0);
+end;
+
+procedure TformVendaDireta.BitBtn1Click(Sender: TObject);
+begin
+ if dmoPrincipal.Pergunta('Tem certeza que deseja cancelar este movimento?' +
+    #13+#10+#13#10+
+    'Essa saída será apagada, todos os produtos serão devolvidos ao estoque ' +
+    'e toda a movimentação de contas a receber (referente a esse movimento) será igualmente destruída.',
+    'Muita atenção, #!!!', 2) = IDYES then
+  begin
+   with dataVenda do
+    begin
+     if not (qryMovimentos.State = dsEdit) then
+       qryMovimentos.Edit;
+
+     if not memItens.EOF then
+      begin
+        memItens.First;
+        while not memItens.EOF do memItens.delete;
+      end;
+     try
+       qryMovimentos.fieldByName('TIPO').AsInteger := 9;
+       qryMovimentos.Post;
+     except
+       on exception do qryMovimentos.Cancel;
+     end;
+    end;
+   close;
+  end;
+end;
+
+procedure TformVendaDireta.dedBARRAEnter(Sender: TObject);
+begin
+   dedCODCLIENTEEnter(Sender);
+
+   with dataVenda.memItens do
+    begin
+     if State = dsInsert then cancel;
+     Append;
+    end;
+end;
+
+procedure TformVendaDireta.dedCODCLIENTEEnter(Sender: TObject);
+begin
+     if Sender is TEdit then
+      begin
+       TEdit(Sender).Color := clInfoBK;
+       TEdit(Sender).Font.Style := [fsBold];
+      end;
+     if Sender is TDBEdit then
+      begin
+       TDBEdit(Sender).Color := clInfoBK;
+       TDBEdit(Sender).Font.Style := [fsBold];
+      end;
+     if Sender is TDBMemo then
+      begin
+       TDBMemo(Sender).Color := clInfoBK;
+       TDBMemo(Sender).Font.Style := [fsBold];
+      end;
+     if Sender is TRxDBCalcEdit then
+      begin
+       TRxDBCalcEdit(Sender).Color := clInfoBK;
+       TRxDBCalcEdit(Sender).Font.Style := [fsBold];
+      end;
+end;
+
+procedure TformVendaDireta.dedCODCLIENTEExit(Sender: TObject);
+begin
+     if Sender is TEdit then
+      begin
+       TEdit(Sender).Color := clWindow;
+       TEdit(Sender).Font.Style := [];
+      end;
+     if Sender is TDBEdit then
+      begin
+       TDBEdit(Sender).Color := clWindow;
+       TDBEdit(Sender).Font.Style := [];
+      end;
+     if Sender is TDBMemo then
+      begin
+       TDBMemo(Sender).Color := clWindow;
+       TDBMemo(Sender).Font.Style := [];
+      end;
+     if Sender is TRxDBCalcEdit then
+      begin
+       TRxDBCalcEdit(Sender).Color := clWindow;
+       TRxDBCalcEdit(Sender).Font.Style := [];
+      end;
+end;
+
+procedure TformVendaDireta.FormDestroy(Sender: TObject);
+begin
+//    dataVenda.release;
+end;
+
+
+procedure TformVendaDireta.actNovoProdutoExecute(Sender: TObject);
+begin
+        dedBARRA.setfocus;   
+end;
+
+procedure TformVendaDireta.actGravaProdutoExecute(Sender: TObject);
+begin
+   with dataVenda.memItens do
+     if (fieldByName('BARRA').AsString > '') and
+        (fieldByName('QUANTIDADE').AsFloat > 0) and
+        (State = dsInsert) then
+      begin
+       post;
+
+       { verifico se existe serviço! }
+       if dataVenda.InfoItem.paramByName('CODSERVICO').AsInteger > 0 then
+        begin
+         if dataVenda.qryServico.active then dataVenda.qryServico.close;
+         dataVenda.qryServico.paramByname('CODSERVICO').AsInteger :=
+           dataVenda.InfoItem.paramByName('CODSERVICO').AsInteger;
+         dataVenda.qryServico.open;
+         insert;
+         fieldByName('BARRA').AsString :=
+           dataVenda.qryServico.fieldByName('BARRA').AsString;
+        end;
+      end;
+end;
+
+procedure TformVendaDireta.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+var
+  atag: word;
+begin
+     if ActiveControl = nil then atag := 0 else
+       atag := ActiveControl.Tag;
+
+     if (key = vk_Return) and (atag < 3) then
+      if shift = [] then Perform(wm_NextDlgCtl, 0, 0) else
+       if shift = [ssShift] then Perform(wm_NextDlgCtl, 0, 0);
+
+     if not odd(atag) then
+      begin
+       case key of
+        vk_Down: Perform(wm_NextDlgCtl, 0, 0);
+        vk_Up: Perform(wm_NextDlgCtl, 1, 0);
+       end;
+       if (atag = 2) and (key = vk_return) then key := 34;
+      end;
+end;
+
+procedure TformVendaDireta.btnContinuar2Click(Sender: TObject);
+begin
+   with dataVenda.memItens do
+    try
+     if State in [dsEdit, dsInsert] then Post;
+    except
+     on exception do raise;
+    end;
+
+   with dataVenda.qryMovimentos do
+    try
+     Post;
+     edit;
+    except
+     on exception do
+      begin
+//       ShowMessage('Houve um erro nas informações. Por favor, verifique os dados.');
+       if not (state in [dsInsert, dsEdit]) then edit;
+       raise; { exit; }
+      end;
+    end;
+
+   with pgcDados do
+    begin
+     tabFatura.TabVisible := True;
+     tabFatura.Caption := 'Faturamento';
+     ActivePage := Pages[1];
+     tabItens.TabVisible := False;
+    end;
+
+   { acerto os botoes }
+   btnAnterior2.Enabled  := False;
+   btnContinuar2.Enabled := False;
+   btnAnterior3.Enabled  := True;
+   btnFinal.Enabled      := True;
+
+end;
+
+procedure TformVendaDireta.lblNatuoperClick(Sender: TObject);
+begin
+     Screen.Cursor := crHourGlass;
+     with TformNatuoper.Create(Self) do
+      try
+       Caption := Self.Caption + ' -> ' + Caption;
+       ShowModal;
+       if (ModalResult = mrOk) and (qrySelecionar.Active) then
+         dataVenda.qryMovimentos.fieldByName('NOTA_CODNATUOPER').AsString :=
+           qrySelecionar.fieldByName('CODIGO').AsString;
+      finally
+       release;
+      end;
+end;
+
+procedure TformVendaDireta.lblTransportadorClick(Sender: TObject);
+begin
+     Screen.Cursor := crHourGlass;
+     with TformClientes.Create(Self) do
+      try
+       Caption := Self.Caption + ' -> ' + Caption;
+       ShowModal;
+       if (ModalResult = mrOk) and (cdsSelecionar.Active) then
+         dataVenda.qryMovimentos.fieldByName('NOTA_CODTRANSPORTADOR').AsInteger :=
+           cdsSelecionar.fieldByName('CODIGO').AsInteger;
+      finally
+       release;
+      end;
+end;
+
+procedure TformVendaDireta.CancelarItem1Click(Sender: TObject);
+begin
+    with dataVenda.memItens do
+      delete;
+end;
+
+procedure TformVendaDireta.btnAnterior3Click(Sender: TObject);
+begin
+   with pgcDados do
+    begin
+     tabItens.TabVisible := True;
+     tabItens.Caption := 'Itens';
+     ActivePage := Pages[1];
+     tabFatura.TabVisible := False;
+    end;
+
+   { acerto os botoes }
+   btnAnterior3.Enabled  := False;
+   btnFinal.Enabled      := False;
+   btnAnterior2.Enabled  := True;
+   btnContinuar2.Enabled := True;
+
+end;
+
+procedure TformVendaDireta.FormCreate(Sender: TObject);
+begin
+   inOS := 0;
+   inCliente := 0;
+   fechamento_anormal := true;
+end;
+
+procedure TformVendaDireta.ckFecharClick(Sender: TObject);
+begin
+  if ckFechar.Checked then
+    btnFinal.Caption := '&Fechar a saída!' else
+    btnFinal.Caption := '&Continuar depois...';
+end;
+
+procedure TformVendaDireta.btnFinalMouseUp(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+
+  with dataVenda do
+   begin
+
+     with qryMovimentos do
+      try
+       if not (state in [dsInsert, dsEdit]) then edit;
+       Post;
+      except
+       on exception do
+        begin
+//         ShowMessage('Houve um erro nas informações. Por favor, verifique os dados.');
+         if not (state in [dsInsert, dsEdit]) then edit;
+         raise; { exit; }
+        end;
+      end;
+
+
+    if ckFechar.Checked then
+     begin
+
+      { confirmacao de senha }
+      if dmoPrincipal.cdsConfig.fieldByName('SENHA_FECHAMENTO').AsString = 'S' then
+       try
+         formConfirmaSenha := TformConfirmaSenha.Create(self);
+         with formConfirmaSenha do
+          if not(showmodal = mrOk) then
+            exit;
+       finally
+         formConfirmaSenha.release;
+       end;
+
+      { mudo o status e outras definições }
+      with qryMovimentos do
+       try
+        edit;
+
+        { se for OS ABERTA vira OS FECHADA }
+        if fieldByName('TIPO').AsInteger = 2 then
+          fieldByName('TIPO').AsInteger := 3;
+
+        { se for VENDA ABERTA vira VENDA FECHADA }
+        if fieldByName('TIPO').AsInteger = 5 then
+          fieldByName('TIPO').AsInteger := 6;
+
+{$IFDEF DARUMA}
+            fieldByName('ECF').AsString := 'S';
+            {fieldByName('NOTA_NUMERO').AsInteger := numCupom; }
+{$ENDIF}
+
+        post;
+       except
+        on exception do raise;
+       end;
+
+
+{$IFNDEF DARUMA}
+
+      { se for nota, imprimo nota }
+      if not ((Shift = [ssCtrl]) or (Shift = [ssShift])) then
+       begin
+
+         { impressão da nota usando a Geografia NF configurada }
+         with TformImprimirNota.Create(Self) do
+          try
+            inCODMOVIMENTO :=
+              dataVenda.qryMovimentos.fieldByName('CODIGO').AsInteger;
+            showmodal;
+          finally
+            release;
+          end;
+
+       end else
+       begin
+
+          if (Shift = [ssShift]) and (not (Shift = [ssCtrl])) then
+            { verifico que tipo de OS estamos usando! }
+            if dmoPrincipal.cdsConfig.fieldByName('OSFECHADA_PADRAO').IsNull then
+             begin
+
+               { OS gráfica }
+               with TformOSnota.Create(Self) do
+                try
+                 if qryOSnota.Active then qryOSnota.Close;
+                 qryOSnota.ParamByName('codigo').AsInteger :=
+                      qryMovimentos.fieldByName('CODIGO').AsInteger;
+                 qryOSnota.open;
+
+                 qrOSnota.Preview;
+                finally
+                 release;
+                end;
+
+             end else
+             begin
+
+               { impressão da nota usando a Geografia OS configurada }
+               with TformImprimirOSfechada.Create(Self) do
+                try
+                  inCODMOVIMENTO := qryMovimentos.fieldByName('CODIGO').AsInteger;
+                  inNUMERONOTA   := qryMovimentos.fieldByName('CODIGO').AsInteger;
+                  showmodal;
+                finally
+                  release;
+                end;
+
+             end;
+
+       end;
+
+{$ENDIF}
+
+     end;
+   end;
+  fechamento_anormal := false;
+  close;
+end;
+
+procedure TformVendaDireta.DBEdit4KeyPress(Sender: TObject; var Key: Char);
+begin
+        dmoPrincipal.PointToComma(Key);
+
+end;
+
+procedure TformVendaDireta.DBEdit5KeyPress(Sender: TObject; var Key: Char);
+begin
+        dmoPrincipal.PointToComma(Key);
+
+end;
+
+procedure TformVendaDireta.DBEdit17KeyPress(Sender: TObject;
+  var Key: Char);
+begin
+        dmoPrincipal.PointToComma(Key);
+
+end;
+
+procedure TformVendaDireta.Label34Click(Sender: TObject);
+begin
+   Screen.Cursor := crHourGlass;
+   with TformServicos.Create(Self) do
+    try
+     ShowModal;
+     if (ModalResult = mrOk) and (qrySelecionar.Active) then
+      with dataVenda.memItens do
+       begin
+        if State = dsInsert then cancel;
+        Append;
+        fieldByName('BARRA').AsString :=
+            qrySelecionar.fieldByName('BARRA').AsString;
+       end;
+    finally
+     release;
+    end;
+end;
+
+procedure TformVendaDireta.Label35Click(Sender: TObject);
+begin
+     Screen.Cursor := crHourGlass;
+     with TformClientes.Create(Self) do
+      try
+       Caption := Self.Caption + ' -> ' + Caption;
+
+       { JumpStart }
+       inCliente := dataVenda.qryMovimentos.fieldByName('CODVENDEDOR').AsInteger;
+
+       SetWhereDynamic('(TIPO = ''A'')', '');
+       ShowModal;
+       if (ModalResult = mrOk) and (cdsSelecionar.Active) then
+         dataVenda.qryMovimentos.fieldByName('CODVENDEDOR').AsInteger :=
+           cdsSelecionar.fieldByName('CODIGO').AsInteger;
+      finally
+       release;
+      end;
+end;
+
+procedure TformVendaDireta.Label36Click(Sender: TObject);
+begin
+     Screen.Cursor := crHourGlass;
+     with TformClientes.Create(Self) do
+      try
+       Caption := Self.Caption + ' -> ' + Caption;
+
+       { JumpStart }
+       inCliente := dataVenda.qryMovimentos.fieldByName('CODTECNICO').AsInteger;
+
+       ShowModal;
+       if (ModalResult = mrOk) and (cdsSelecionar.Active) then
+         dataVenda.qryMovimentos.fieldByName('CODTECNICO').AsInteger :=
+           cdsSelecionar.fieldByName('CODIGO').AsInteger;
+      finally
+       release;
+      end;
+end;
+
+procedure TformVendaDireta.btnContinuar1Click(Sender: TObject);
+var
+  soma: extended;
+begin
+
+   {***********************************************************************}
+   {                                                                       }
+   {   Calculo da soma das porcentagens de Comissao                        }
+   {                                                                       }
+   {***********************************************************************}
+
+   soma := 0.0;
+   with dataVenda.qryOS_VENDER do
+    begin
+      if State in [dsInsert, dsEdit] then
+        post;
+
+      disablecontrols;
+      first;
+      while not eof do
+       begin
+        soma := soma + fieldByName('PORCENTAGEM').AsFloat;
+        next;
+       end;
+      enablecontrols;
+    end;
+   if (soma <> 0.0) and (soma <> 100.0) then
+    begin
+     ShowMessage('ATENÇÃO: As porcentagens de participação dos técnicos devem totalizar 100%!');
+     exit;
+    end;
+
+   {***********************************************************************}
+   {                                                                       }
+   {   Gravacao das informacoes na OS/Venda                                }
+   {                                                                       }
+   {***********************************************************************}
+
+   with dataVenda.qryMovimentos do
+    try
+     Post;
+     edit;
+    except
+     on exception do
+      begin
+//       ShowMessage('Houve um erro nas informações. Por favor, verifique os dados.');
+       if not (state in [dsInsert, dsEdit]) then edit;
+       raise;  { exit; }
+      end;
+    end;
+
+   {***********************************************************************}
+   {                                                                       }
+   {   Calculo da soma das porcentagens de Comissao                        }
+   {                                                                       }
+   {***********************************************************************}
+
+   with pgcDados do
+    begin
+     tabItens.TabVisible := True;
+     tabItens.Caption := 'Itens';
+     ActivePage := Pages[1];
+     tabDados.TabVisible := False;
+    end;
+
+  { acerto os botoes }
+  btnContinuar1.Enabled := False;
+  btnAnterior2.Enabled  := True;
+  btnContinuar2.Enabled := True;
+
+end;
+
+procedure TformVendaDireta.btnAnterior2Click(Sender: TObject);
+begin
+   with pgcDados do
+    begin
+     tabDados.TabVisible := True;
+     tabDados.Caption := 'Dados da Saída';
+     ActivePage := Pages[0];
+     tabItens.TabVisible := False;
+    end;
+
+   { acerto os botoes }
+   btnAnterior2.Enabled  := False;
+   btnContinuar2.Enabled := False;
+   btnContinuar1.Enabled := True;
+
+end;
+
+procedure TformVendaDireta.FormCloseQuery(Sender: TObject;
+  var CanClose: Boolean);
+begin
+  if fechamento_anormal then
+   if dmoPrincipal.Pergunta(
+    'Olá, #!' + #13#10#13#10 +
+    'Esse procedimento deve ser usando somente em casos emergenciais, onde ' +
+    'o mal funcionamento do sistema ou um erro irrecuperável poderia ' +
+    'impedi-lo de continuar.' + #13#10#13#10 +
+    'Pouca ou nenhuma modificação será salva ao responder com Sim. Portanto ' +
+    'use esta opção somente se for a última alternativa.',
+    'SAÍDA DE EMERGÊNCIA',
+    2) = IDYES then
+     begin
+
+      { cancelo o movimento }
+      with dataVenda.qryMovimentos do
+        if state in [dsInsert, dsEdit] then cancel;
+
+      { rollback no banco de dados }
+      with dataVenda do
+        if traMovimentos.InTransaction then
+          traMovimentos.Rollback;
+
+      CanClose := True;
+
+     end else CanClose := false;
+
+end;
+
+procedure TformVendaDireta.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  with dataVenda do
+    if qryMovimentos.Active then qryMovimentos.Close;
+  Screen.Cursor := crDefault;
+end;
+
+procedure TformVendaDireta.pgcDadosChange(Sender: TObject);
+begin
+//  if pgcDados.ActivePage = tabFatura then
+//   with dataVenda do
+//    if not qryMovimentos.fieldByName('CODIGO').IsNull then
+//     begin
+//      if qryPagamentos.Active then qryPagamentos.close;
+//      qryPagamentos.Open;
+//    end;
+end;
+
+procedure TformVendaDireta.Label5Click(Sender: TObject);
+begin
+     Screen.Cursor := crHourGlass;
+     with TformClientes.Create(Self) do
+      try
+       SetWhereDynamic('TIPO = ''A''',
+         'Somente Associados');
+
+       Caption := Self.Caption + ' -> ' + Caption;
+
+       { JumpStart }
+       inCliente := dataVenda.qryOS_VENDER.fieldByName('CODVENDEDOR').AsInteger;
+
+       ShowModal;
+       if (ModalResult = mrOk) and (cdsSelecionar.Active) then
+         dataVenda.qryOS_VENDER.fieldByName('CODVENDEDOR').AsInteger :=
+           cdsSelecionar.fieldByName('CODIGO').AsInteger;
+      finally
+       release;
+      end;
+end;
+
+procedure TformVendaDireta.Label43Click(Sender: TObject);
+begin
+     Screen.Cursor := crHourGlass;
+     with TformVeiculos.Create(Self) do
+      try
+       Caption := Self.Caption + ' -> ' + Caption;
+
+       ShowModal;
+       if (ModalResult = mrOk) and (qrySelecionar.Active) then
+         dataVenda.qryOS_VENDER.fieldByName('CODVEICULO').AsInteger :=
+           qrySelecionar.fieldByName('CODIGO').AsInteger;
+      finally
+       release;
+      end;
+end;
+
+procedure TformVendaDireta.btnAdicionarClick(Sender: TObject);
+begin
+  dataVenda.qryOS_VENDER.Append;
+end;
+
+procedure TformVendaDireta.btnSairClick(Sender: TObject);
+begin
+  dataVenda.qryOS_VENDER.Delete;
+
+end;
+
+procedure TformVendaDireta.dedENTRADACLIEnter(Sender: TObject);
+begin
+     if Sender is TEdit then
+      begin
+       TEdit(Sender).Color := clInfoBK;
+       TEdit(Sender).Font.Style := [fsBold];
+      end;
+     if Sender is TDBEdit then
+      begin
+       TDBEdit(Sender).Color := clInfoBK;
+       TDBEdit(Sender).Font.Style := [fsBold];
+      end;
+     if Sender is TDBMemo then
+      begin
+       TDBMemo(Sender).Color := clInfoBK;
+       TDBMemo(Sender).Font.Style := [fsBold];
+      end;
+     if Sender is TRxDBCalcEdit then
+      begin
+       TRxDBCalcEdit(Sender).Color := clInfoBK;
+       TRxDBCalcEdit(Sender).Font.Style := [fsBold];
+      end;
+end;
+
+end.

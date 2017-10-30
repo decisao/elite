@@ -1,0 +1,73 @@
+CREATE PROCEDURE WEBGRID_CLIENTES(
+BUSCA VARCHAR (40))
+RETURNS (
+CODIGO INTEGER,
+NOME VARCHAR (40),
+FONE VARCHAR (45),
+CELULAR VARCHAR (20),
+CPF VARCHAR (45),
+CGC VARCHAR (20),
+TIPO CHAR(1))
+as
+  DECLARE VARIABLE N INTEGER;
+BEGIN
+
+  N = 0;
+
+  FOR
+  SELECT
+    CODIGO,
+    NOME,
+    FONE,
+    CELULAR,
+    CPF,
+    CGC,
+    TIPO
+  FROM
+    CLIENTES
+  WHERE
+    NOME LIKE :BUSCA
+  ORDER BY
+    NOME
+  INTO
+    :CODIGO,
+    :NOME,
+    :FONE,
+    :CELULAR,
+    :CPF,
+    :CGC,
+    :TIPO
+  DO
+  BEGIN
+
+    if ((FONE IS NULL) AND (CELULAR IS NULL)) then
+      FONE = 'N/A';
+    ELSE
+      if ((FONE IS NULL) AND (CELULAR IS NOT NULL)) then
+         FONE = CELULAR;
+      ELSE
+         if ((FONE IS NOT NULL) AND (CELULAR IS NOT NULL)) then
+            FONE = F_LRTRIM(FONE) || ' - ' || F_LRTRIM(CELULAR);
+
+    if ((CPF IS NULL) AND (CGC IS NULL)) then
+      CPF = 'N/A';
+    ELSE
+      if ((CPF IS NULL) AND (CGC IS NOT NULL)) then
+         CPF = CGC;
+      ELSE
+         if ((CPF IS NOT NULL) AND (CGC IS NOT NULL)) then
+            CPF = F_LRTRIM(CPF) || ' - ' || F_LRTRIM(CGC);
+
+    N = N + 1;
+    IF (N > 50) THEN
+      EXIT;
+    ELSE
+      SUSPEND;
+
+  END
+
+END!
+
+GRANT EXECUTE ON PROCEDURE WEBGRID_CLIENTES TO PUBLIC!
+
+INSERT INTO SCRIPTVER(NUMERO, DATA) VALUES (54, CURRENT_TIMESTAMP)!

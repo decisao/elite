@@ -1,0 +1,230 @@
+unit updatedb;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
+  Dialogs, ComCtrls, StdCtrls, IBCustomDataSet, IBQuery, IBDatabase, DB,
+  DBClient, ShellApi, ExtCtrls, DBCtrls, ZipMstr;
+
+type
+  TformUpdateDB = class(TForm)
+    pb: TProgressBar;
+    lbMsg: TLabel;
+    IBTransaction: TIBTransaction;
+    IBQuery: TIBQuery;
+    IBQueryULTIMO: TIntegerField;
+    tmrProcesso: TTimer;
+    tmrFinal: TTimer;
+    GroupBox1: TGroupBox;
+    Label1: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    ZipMaster: TZipMaster;
+    IBDatabase: TIBDatabase;
+    procedure FormShow(Sender: TObject);
+    procedure tmrProcessoTimer(Sender: TObject);
+    procedure tmrFinalTimer(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure IBDatabaseBeforeConnect(Sender: TObject);
+  private
+    { Private declarations }
+    procedure Processo;
+  public
+    { Public declarations }
+    usuario, senha: string;
+  end;
+
+var
+  formUpdateDB: TformUpdateDB;
+
+implementation
+
+uses data_principal;
+
+{$R *.dfm}
+
+function ExecAndWait(const FileName, Params: ShortString; const WinState: Word): boolean; export;
+var
+  StartInfo: TStartupInfo;
+  ProcInfo: TProcessInformation;
+  CmdLine: ShortString;
+begin
+  { Coloca o nome do arquivo entre aspas, devido a possibilidade de existir espaços nos nomes longos do Windows 9x }
+  CmdLine := '"' + Filename + '" ' + Params;
+  FillChar(StartInfo, SizeOf(StartInfo), #0);
+  with StartInfo do
+   begin
+     cb := SizeOf(StartInfo);
+     dwFlags := STARTF_USESHOWWINDOW;
+     wShowWindow := WinState;
+   end;
+  Result := CreateProcess(nil, PChar( String( CmdLine ) ), nil, nil, false, CREATE_NEW_CONSOLE or NORMAL_PRIORITY_CLASS, nil, PChar(ExtractFilePath(Filename)),StartInfo,ProcInfo);
+  { Aguarda o encerramento do programa executado }
+  if Result then
+   begin
+     WaitForSingleObject(ProcInfo.hProcess, INFINITE);
+     { Libera os Handles utilizados }
+     CloseHandle(ProcInfo.hProcess);
+     CloseHandle(ProcInfo.hThread);
+   end;
+end;
+
+procedure TformUpdateDB.FormShow(Sender: TObject);
+begin
+  tmrProcesso.Enabled := True;
+end;
+
+procedure TformUpdateDB.Processo;
+var
+  num_atual,
+  num_banco,
+  n: integer;
+  fn: string;
+begin
+
+  try
+
+    { parametros do IBDatabase }
+    IBDatabase.DatabaseName :=
+      dmoPrincipal.Database.DatabaseName;
+    dmoPrincipal.Database.Connected := False;
+    IBDatabase.Connected := True;
+
+    { posição do banco }
+    IBQuery.Open;
+    num_banco := IBQuery.fieldByName('ULTIMO').AsInteger;
+    IBDatabase.Connected := False;
+
+    { extração dos scripts }
+    ZipMaster.Load_Zip_Dll;
+    ZipMaster.Load_Unz_Dll;
+    ZipMaster.ZipFileName := dmoPrincipal.GetAppDir + '\scripts.zip';
+    ZipMaster.ExtrBaseDir := dmoPrincipal.GetAppDir + '\updates';
+    ZipMaster.Password := 'm0ra15r315';
+    if CreateDir(ZipMaster.ExtrBaseDir) then
+      ZipMaster.Extract;
+    ZipMaster.Unload_Zip_Dll;
+    ZipMaster.Unload_Unz_Dll;
+
+    { verifico as atualizações disponíveis }
+    n := num_banco;
+    repeat
+      inc(n);
+      fn := Format('%.4d.SQL', [n]);
+    until not FileExists(dmoPrincipal.GetAppDir + '\updates\' + fn);
+    num_atual := pred(n);
+
+
+    { existem atualizações? }
+    if num_banco < num_atual then
+     begin
+
+       pb.Max := (num_atual - num_banco) + 3;
+
+       { desligo os usuários atuais }
+       lbMsg.Caption := 'Desconectando usuários...';
+       Application.ProcessMessages;
+
+       { abro/executo o arquivo }
+       if ParamStr(1) > '' then
+         ExecAndWait(dmoPrincipal.GetAppDir + '\gfix.exe',
+           ' -shut -force 5 "' +
+           IBDatabase.DatabaseName + '" -user ' + usuario + ' -pas ' + senha,
+           sw_ShowMinimized);
+
+       { incremento o contador }
+       pb.Position := succ(pb.Position);
+
+       { laço das atualizações }
+       n := num_banco;
+       repeat
+
+          inc(n);
+
+          { executo o script }
+          ExecAndWait(dmoPrincipal.GetAppDir + '\isql.exe ', '"' +
+            IBDatabase.DatabaseName + '" -e -i "' +
+            dmoPrincipal.GetAppDir + '\updates\' + Format('%.4d', [n]) + '.SQL" -o "' +
+            dmoPrincipal.GetAppDir + '\updates\SAIDA.TXT" ' +
+            '-u ' + usuario + ' -p ' + senha + ' -s 3',
+            sw_ShowMinimized);
+
+          { incremento o contador }
+          pb.Position := succ(pb.Position);
+
+          { Notifico o script }
+          lbMsg.Caption := Format('Executando atualização crítica %d de %d...',
+            [n, num_atual]);
+          ShowMessage(lbMsg.Caption);
+          Application.ProcessMessages;
+
+       until (n = num_atual);
+
+       { religo os usuários }
+       lbMsg.Caption := 'Habilitando usuários...';
+       Application.ProcessMessages;
+
+       if ParamStr(1) > '' then
+         ExecAndWait(dmoPrincipal.GetAppDir + '\gfix.exe',
+           ' -online "' +
+           IBDatabase.DatabaseName + '" -user ' + usuario + ' -pas ' + senha,
+           sw_ShowMinimized);
+
+       { incremento o contador }
+       pb.Position := succ(pb.Position);
+
+     end else
+     begin
+
+       { religo os usuários }
+       lbMsg.Caption := 'Atualizado!';
+       Application.ProcessMessages;
+
+     end;
+
+    { incremento o contador }
+    pb.Position := succ(pb.Position);
+
+    pb.Position := pb.Max;
+    tmrFinal.Enabled := True;
+
+    { apago os arquivos temporários }
+    dmoPrincipal.RecursiveDeletion(dmoPrincipal.GetAppDir + '\updates\');
+    DeleteFile(dmoPrincipal.GetAppDir + '\scripts.zip');
+  except
+    close;
+  end;
+
+end;
+
+procedure TformUpdateDB.tmrProcessoTimer(Sender: TObject);
+begin
+  tmrProcesso.Enabled := False;
+  processo;
+end;
+
+procedure TformUpdateDB.tmrFinalTimer(Sender: TObject);
+begin
+  tmrFinal.Enabled := False;
+  close;
+end;
+
+procedure TformUpdateDB.FormCreate(Sender: TObject);
+begin
+  usuario := 'SYSDBA';
+  if ParamStr(1) > '' then
+    senha := 'morais77'
+  else
+    senha := 'masterkey';
+end;
+
+procedure TformUpdateDB.IBDatabaseBeforeConnect(Sender: TObject);
+begin
+  IBDatabase.Params.Clear;
+  IBDatabase.Params.Add('user_name=' + usuario);
+  IBDatabase.Params.Add('password=' + senha);
+end;
+
+end.

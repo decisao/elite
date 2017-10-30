@@ -1,0 +1,1640 @@
+<HTML>
+<HEAD>
+<!-- This HTML file has been created by texi2html 1.54
+     from FreeUDFLib.texi on 6 August 1998 -->
+
+<TITLE>FreeUDFLib</TITLE>
+
+</HEAD>
+<BODY>
+<H1>FreeUDFLib</H1>
+<H2>A Free UDF Library for InterBase Servers</H2>
+<ADDRESS>Gregory H. Deatz</ADDRESS>
+<P>
+<P><HR><P>
+<H1>Table of Contents</H1>
+<UL>
+<LI><A NAME="TOC1" HREF="FreeUDFLib.html#SEC1">Introduction</A>
+<UL>
+<LI><A NAME="TOC2" HREF="FreeUDFLib.html#SEC2">Acknowledgements</A>
+<UL>
+<LI><A NAME="TOC3" HREF="FreeUDFLib.html#SEC3">Hoagland, Longo, Moran, Dunst &#38; Doukas</A>
+<LI><A NAME="TOC4" HREF="FreeUDFLib.html#SEC4">InterBase corporation</A>
+<LI><A NAME="TOC5" HREF="FreeUDFLib.html#SEC5">Contributors and supporters</A>
+</UL>
+<LI><A NAME="TOC6" HREF="FreeUDFLib.html#SEC6">Technical support</A>
+<UL>
+<LI><A NAME="TOC7" HREF="FreeUDFLib.html#SEC7">Bugs</A>
+<LI><A NAME="TOC8" HREF="FreeUDFLib.html#SEC8">Documentation</A>
+<LI><A NAME="TOC9" HREF="FreeUDFLib.html#SEC9">Wish lists</A>
+<LI><A NAME="TOC10" HREF="FreeUDFLib.html#SEC10">Help desk</A>
+</UL>
+<LI><A NAME="TOC11" HREF="FreeUDFLib.html#SEC11">About the documentation</A>
+</UL>
+<LI><A NAME="TOC12" HREF="FreeUDFLib.html#SEC12">Release notes</A>
+<UL>
+<LI><A NAME="TOC13" HREF="FreeUDFLib.html#SEC13">Planned features</A>
+<LI><A NAME="TOC14" HREF="FreeUDFLib.html#SEC14">8/6/98</A>
+<LI><A NAME="TOC15" HREF="FreeUDFLib.html#SEC15">3/13/98</A>
+</UL>
+<LI><A NAME="TOC16" HREF="FreeUDFLib.html#SEC16">Installation</A>
+<LI><A NAME="TOC17" HREF="FreeUDFLib.html#SEC17">Licensing</A>
+<LI><A NAME="TOC18" HREF="FreeUDFLib.html#SEC18">Functions</A>
+<UL>
+<LI><A NAME="TOC19" HREF="FreeUDFLib.html#SEC19">Obsolete functions</A>
+<LI><A NAME="TOC20" HREF="FreeUDFLib.html#SEC20">List of functions</A>
+<UL>
+<LI><A NAME="TOC21" HREF="FreeUDFLib.html#SEC21">String routines</A>
+<LI><A NAME="TOC22" HREF="FreeUDFLib.html#SEC22">Miscellaneous routines</A>
+<LI><A NAME="TOC23" HREF="FreeUDFLib.html#SEC23">Blob routines</A>
+<LI><A NAME="TOC24" HREF="FreeUDFLib.html#SEC24">Math routines</A>
+<LI><A NAME="TOC25" HREF="FreeUDFLib.html#SEC25">Date/Time routines</A>
+<LI><A NAME="TOC26" HREF="FreeUDFLib.html#SEC26">User maintenance routines</A>
+</UL>
+</UL>
+<LI><A NAME="TOC27" HREF="FreeUDFLib.html#SEC27">About the author</A>
+</UL>
+<P><HR><P>
+
+
+<H1><A NAME="SEC1" HREF="FreeUDFLib.html#TOC1">Introduction</A></H1>
+
+<P>
+FreeUDFLib is a free UDF library for use with InterBase databases. It is
+written in Delphi, and all source code is provided. Just because it is
+free, however, does not mean that it is public domain. If you have
+questions regarding your rights, please see see section <A HREF="FreeUDFLib.html#SEC17">Licensing</A>.
+
+</P>
+
+
+
+<H2><A NAME="SEC2" HREF="FreeUDFLib.html#TOC2">Acknowledgements</A></H2>
+
+
+
+<H3><A NAME="SEC3" HREF="FreeUDFLib.html#TOC3">Hoagland, Longo, Moran, Dunst &#38; Doukas</A></H3>
+
+<P>
+Hoagland, Longo, Moran, Dunst &#38; Doukas is a law firm in New Brunswick,
+NJ. This law firm is one of the most technologically advanced law firms
+in New Jersey, due largely to the fact that their management team has a
+uniquely clear vision of the future use of technology in the legal
+field.
+
+</P>
+
+<BLOCKQUOTE>
+<P>
+Hoagland, Longo, Moran, Dunst &#38; Doukas is dedicated to providing quality
+legal services to the business community, healthcare and  insurance
+industries. Since our founding in 1977 we have handled thousands of
+matters spanning the spectrum of business transactions and civil
+litigation including automobile negligence, commercial litigation,
+construction claims, coverage,  D and O liability, employment practices
+liability, environmental claims, general liability, municipal liability,
+products liability, professional liability and workers compensation.
+</BLOCKQUOTE>
+
+<P>
+<EM>Very special thanks goes to Hoagland, Longo, Moran, Dunst &#38; Doukas.</EM>
+If you ever require legal representation in the New Jersey area, you
+might want to look these guys up.
+
+</P>
+
+
+<H3><A NAME="SEC4" HREF="FreeUDFLib.html#TOC4">InterBase corporation</A></H3>
+
+<P>
+<A HREF="http://www.interbase.com"><TT>InterBase</TT></A> corporation has provided
+their support by providing a home for both FreeUDFLib and
+FreeUDFLib (see section <A HREF="FreeUDFLib.html#SEC27">About the author</A>).
+
+</P>
+<P>
+Obviously, without InterBase, FreeUDFLib would be virtually meaningless,
+so a special thanks goes to all at InterBase, with a strong vote of
+support to <EM>please</EM> continue the outstanding work!
+
+</P>
+
+
+<H3><A NAME="SEC5" HREF="FreeUDFLib.html#TOC5">Contributors and supporters</A></H3>
+
+<P>
+Here is a list of all who have contributed or otherwise supported the
+project. If your name has been omitted, it is not on purpose:
+
+</P>
+
+<UL>
+<LI>
+
+Kenneth J. Doukas, Managing Partner of Hoagland, Longo, Moran, Dunst &#38;
+Doukas.
+<BR>
+(<A HREF="mailto:kenneth_j_doukas@hlmdd.com"><TT>kenneth_j_doukas@hlmdd.com</TT></A>)
+
+<LI>
+
+Bill Karwin, Director of Publications at InterBase
+Corporation.
+<BR>
+(<A HREF="mailto:bkarwin@interbase.com"><TT>bkarwin@interbase.com</TT></A>)
+
+<LI>
+
+Douglas Susan, Partner at Hoagland, Longo, Moran, Dunst &#38;
+Doukas.
+<BR>
+(<A HREF="mailto:douglas_susan@hlmdd.com"><TT>douglas_susan@hlmdd.com</TT></A>)
+
+<LI>
+
+Mike Tossy, Director of Marketing at InterBase
+Corporation.
+<BR>
+(<A HREF="mailto:mtossy@interbase.com"><TT>mtossy@interbase.com</TT></A>)
+</UL>
+
+<LI>
+
+Oleg Kukarthev, Gerard Perreault, Stephen W. Boyd, Doug Chamberlin,
+<A HREF="mailto:rberryman@earhlink.net"><TT>rberryman@earhlink.net</TT></A>, John Small
+(<A HREF="mailto:john@yagya.demon.co.uk"><TT>john@yagya.demon.co.uk</TT></A>), Graham Bremner
+(<A HREF="mailto:graham_bremner@hlmdd.com"><TT>graham_bremner@hlmdd.com</TT></A>), Serge Vannieuwenborgh (sva@netsol.be),
+<A HREF="mailto:brentrose@clear.net.nz"><TT>brentrose@clear.net.nz</TT></A>.
+
+
+
+<H2><A NAME="SEC6" HREF="FreeUDFLib.html#TOC6">Technical support</A></H2>
+
+<P>
+Since FreeUDFLib is free, it is important to give developers a
+sense of what kind of support they can expect. Although there are no
+guarantees of <EM>any kind</EM>, I want to give developers reasonable
+assurances of what they can, in general, expect from me.
+
+</P>
+<P>
+I believe that there are four basic levels of support developers
+require:
+
+</P>
+
+<OL>
+<LI>
+
+Prompt bug resolution.
+<LI>
+
+Thorough documentation.
+<LI>
+
+Wish lists.
+<LI>
+
+Standard help-desk style support. (How do I do ...? When should I do ... ?)
+</OL>
+
+
+
+<H3><A NAME="SEC7" HREF="FreeUDFLib.html#TOC7">Bugs</A></H3>
+
+<P>
+FreeUDFLib is intended to be used in production environments! To
+that end, a demonstrated bug <EM>will be fixed</EM> as promptly as
+possible.
+
+</P>
+<P>
+Because FreeUDFLib is completely free, developers also have access
+to the source code. If a bug is fixed, send it to me, and I will
+incorporate it in future "official releases" of the product.
+
+</P>
+<P>
+If a bug cannot be replicated, I will have a difficult time finding it,
+so I can't guarantee resolution of these so-called phantom bugs, but I
+will do my best to resolve them.
+
+</P>
+<P>
+If you provide me with a bug fix, your name will be included in the
+acknowledgements section of this manual. Bug reports should be submitted
+as e-mail messages <EM>only</EM>.
+
+</P>
+
+
+<H3><A NAME="SEC8" HREF="FreeUDFLib.html#TOC8">Documentation</A></H3>
+
+<P>
+The policy on resolving source code bugs also stands for correcting and
+maintaining good documentation. Please send me any and all corrections
+and/or enhancements to the documentation.
+<EM>Every product needs thorough and complete documentation</EM>. Even
+though this product is free, I have a desire to see it used in all
+environments. I can't expect a developer to use it if there is no
+documentation.
+
+</P>
+<P>
+I can't guarantee that I will respond to you, only that your comments
+will be heard and possibly included in future releases.
+
+</P>
+
+
+<H3><A NAME="SEC9" HREF="FreeUDFLib.html#TOC9">Wish lists</A></H3>
+
+<P>
+Users can feel free to provide me with wish list requests and/or
+FreeUDFLib enhancements.
+
+</P>
+<P>
+If you send me a wish list request, you will <EM>not</EM> receive a
+response from me, but you can be assured that your request will be
+considered for future releases.
+
+</P>
+<P>
+If you send me an enhancement or extension to FreeUDFLib that you
+would like included in the distribution, I will consider it and respond
+accordingly. Keep in mind, however, that FreeUDFLib and <EM>all</EM>
+source code is free. Do not even think about asking to distribute
+proprietary products with FreeUDFLib.
+
+</P>
+<P>
+If I distribute product enhancements written by others than myself, their
+names will be included in the acknowledgements section of this manual,
+and their source code will be acknowledged appropriately.
+
+</P>
+
+
+<H3><A NAME="SEC10" HREF="FreeUDFLib.html#TOC10">Help desk</A></H3>
+
+<P>
+I <EM>don't</EM> do help desk support, at least not in general. You can
+feel free to e-mail me with questions, but it is more likely than not
+that you will not receive a response from me.
+
+</P>
+<P>
+Help desk style questions should be directed to an appropriate Internet
+support group. The mailing list <A HREF="mailto:INTERBASE@dx100.mers.com"><TT>INTERBASE@dx100.mers.com</TT></A>, for
+example, provides excellent support for InterBase related questions.
+
+</P>
+<P>
+If you absolutely require my assistance for some issue, I can provide
+services for standard consulting rates.
+
+</P>
+
+
+<H2><A NAME="SEC11" HREF="FreeUDFLib.html#TOC11">About the documentation</A></H2>
+
+<P>
+I have used a product called <EM>texinfo</EM> to produce all documentation
+for FreeUDFLib.
+
+</P>
+<P>
+From a single source file, I can produce a formatted manual, ready for
+print-out (using <EM>tex</EM>), I can produce html, ready for viewing in a
+browser, and I can produce rich-text for the production of a help file.
+
+</P>
+<P>
+I don't see the need for producing a help file, so I haven't included
+one... just the original <EM>texinfo</EM> documentation, a ready-produced
+Acrobat file, and a single HTML manual.
+
+</P>
+<P>
+If the reader wishes to find more information on using <EM>texinfo</EM>
+with Windows, search the internet for "GNU tex texinfo Windows". (O
+yeah, <EM>texinfo</EM> is free, protected under the GNU Public License)
+
+</P>
+
+
+<H1><A NAME="SEC12" HREF="FreeUDFLib.html#TOC12">Release notes</A></H1>
+
+
+
+<H2><A NAME="SEC13" HREF="FreeUDFLib.html#TOC13">Planned features</A></H2>
+
+
+<OL>
+<LI>
+
+Regular expression matcher.
+
+<LI>
+
+Search blobs/text strings for regular expressions.
+</OL>
+
+
+
+<H2><A NAME="SEC14" HREF="FreeUDFLib.html#TOC14">8/6/98</A></H2>
+
+<P>
+By default, FreeUDFLib uses thread-local variables to return strings and
+dates to InterBase. There has been some speculation that thread-local
+variables don't work as well as they should, although I haven't been
+able to verify the speculation, (nor has InterBase, for that matter).
+
+</P>
+<P>
+However, FreeUDFLib can now be built to use dynamic memory allocation
+(with free_it) as opposed to thread-locals. In <TT>`udf_glob.pas'</TT>, just
+uncomment the conditional define called FREE_IT.
+
+</P>
+
+<PRE>
+{$FREE_IT}
+</PRE>
+
+<P>
+This allows you to declare all string and date UDFs with the free_it
+convention.
+
+</P>
+<P>
+New stuff:
+
+</P>
+
+<OL>
+<LI>
+
+New function: GenerateSndxIndex(sz: String);
+<BR>
+You can guess what this function does... It generates the soundex index
+as described on InterBase's web site.
+<LI>
+
+New function: LineWrap. It wraps a string and returns a given line. See
+its definition below.
+</OL>
+
+<P>
+Several functions were removed which did not work, and so were cluttering
+up the source.
+
+</P>
+
+
+<H2><A NAME="SEC15" HREF="FreeUDFLib.html#TOC15">3/13/98</A></H2>
+
+<P>
+Thread-safety has been pretty rigorously tested. Users should not have
+any problems with FreeUDFLib.
+
+</P>
+<P>
+New functions:
+
+<OL>
+<LI>
+
+<CODE>EvaluateExpression</CODE>: evalute a textual expression with support for
+symbols and string, date and numeric literals.
+</OL>
+
+
+
+<H1><A NAME="SEC16" HREF="FreeUDFLib.html#TOC16">Installation</A></H1>
+
+<P>
+After unzipping <CODE>FreeUDFLib.zip</CODE>, copy <TT>`FreeUDFLib.dll'</TT> to the
+InterBase bin directory, most probably
+
+</P>
+
+<PRE>
+c:\Program Files\InterBase Corp\InterBase\Bin
+
+- or -
+
+c:\Program Files\Borland\IntrBase\Bin
+</PRE>
+
+<P>
+Whenever you require the use of FreeUDFLib in an InterBase database, run
+the <TT>`ext_funcs.sql'</TT> SQL script against the database.
+
+</P>
+
+
+<H1><A NAME="SEC17" HREF="FreeUDFLib.html#TOC17">Licensing</A></H1>
+
+<P>
+GENERAL SOFTWARE LICENSE AGREEMENT
+                                
+                                
+CAUTION: THE COPYING, MODIFICATION, TRANSLATION OR DISTRIBUTION OF
+THE OBJECT CODE, PROGRAM, SOFTWARE OR SOURCE CODE IMPLIES
+ACCEPTANCE OF THE TERMS OF THIS GENERAL SOFTWARE PROGRAM LICENSE
+AGREEMENT. YOU SHOULD READ CAREFULLY THE FOLLOWING TERMS AND
+CONDITIONS BEFORE YOU COPY, MODIFY, TRANSLATE OR DISTRIBUTE THE
+OBJECT CODE, PROGRAM, SOFTWARE OR SOURCE CODE.
+
+</P>
+<P>
+1.0  DEFINITIONS
+
+</P>
+<P>
+      1.1 Licensee - The person who has the privilege to copy,
+modify, translate or distribute the object code, program, software
+and source code, subject to the terms and conditions of this
+General Software License Agreement.
+
+</P>
+<P>
+      1.2 Object Code - The version of a computer program in
+machine language, and therefore, ready to be executed by the
+computer.
+
+</P>
+<P>
+      1.3 Program - A sequence of instructions for executions by a
+computer.
+
+</P>
+<P>
+      1.4 Software - The computer program plus program
+documentation, if applicable.
+
+</P>
+<P>
+      1.5 Source Code - The version of a computer program in
+assembly language or high-level language, and therefore, not ready
+to be executed by the computer.
+
+</P>
+<P>
+      1.6 Work - All forms of tangible or intangible property,
+based whole, in part or derived from the object code, program,
+software or source code.
+
+</P>
+<P>
+      1.7 You - The person who has the privilege to copy, modify,
+translate or distribute the object code, program, software and
+source code, subject to the terms and conditions of this General
+Software License Agreement.
+
+</P>
+
+<P>
+2.0 LICENSE
+
+</P>
+<P>
+     2.1 The copyright holder hereby extends a license to you to
+use its copyrighted object code, program, software and source code,
+subject to the terms and conditions of this General Software
+License Agreement.
+
+</P>
+<P>
+      2.2 This license is applicable to the object code, program,
+software and source code distributed under the terms of this
+General Software License Agreement, any work containing the object
+code, program, software or source code distributed under the terms
+of this General Software License Agreement, any modification of the
+object code, program, software or source code distributed under the
+terms of this General Software License Agreement, any translation
+of the object code, program, software or source code distributed
+under the terms of this General Software License Agreement and any
+work containing a modification or translation of the object code,
+program, software or source code distributed pursuant to the terms
+and conditions of this General Software License Agreement. 
+
+</P>
+<P>
+     2.3 You may copy, modify, translate and distribute the object
+code, program, software or source code distributed under the terms
+of this General Software License Agreement, subject to the terms
+and conditions of this General Software License Agreement.
+
+</P>
+<P>
+     2.4 If you copy, modify, translate or distribute the object
+code, program, software or source code distributed under the terms
+of this General Software License Agreement, you must publish and
+make known in a clear and conspicuous manner on each copy,
+modification, translation or distribution  of the object code,
+program, software or source code that the copy, modification,
+translation or distribution of the object code, program, software
+or source code is subject to the terms and conditions of this
+General Software License Agreement and provide a copy of this
+General Software License Agreement with each copy, modification,
+translation or distribution of the object code, program, software
+or source code.
+
+</P>
+<P>
+     2.5 If you derive, publish or distribute any work that is
+based whole or in part on the object code, program, software or
+source code distributed under the terms of this General Software
+License Agreement, or any modification or translation thereof, you
+must publish and make known in a clear and conspicuous manner on
+each such work that the work is subject to the terms and conditions
+of this General Software License Agreement and provide a copy of
+this General Software License Agreement with each work. 
+
+</P>
+<P>
+     2.6 If you copy, modify, translate or distribute the object
+code, program, software or source code distributed under the terms
+and conditions of this General Software License Agreement, you must
+provide clear and conspicuous notice that you have copied,
+modified, translated or distributed the object code, program,
+software or source code distributed under the terms of this General
+Software License Agreement, and indicate the date of each such
+copy, modification, translation or distribution.
+
+</P>
+<P>
+     2.7 If you copy, modify, translate or distribute the object
+code, program, software or source code distributed under the terms
+of this General Software License Agreement, or publish or
+distribute any work that is derived, in whole or in part, from any
+copy, modification, translation or distribution of the object code,
+program, software or source code distributed under the terms of
+this General Software License Agreement, you cannot impose any
+further obligations or restrictions on any third person or entity
+other than what is contained in this General Software License
+Agreement.
+
+</P>
+<P>
+3.0 NO WARRANTY
+
+</P>
+<P>
+      3.1 THE OBJECT CODE, PROGRAM, SOFTWARE AND SOURCE CODE ARE
+PROVIDED "AS IS" WITHOUT ANY WARRANT OF ANY KIND, EITHER EXPRESSED
+OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR USE. THE ENTIRE
+RISK AS TO THE QUALITY AND PERFORMANCE OF THE OBJECT CODE, PROGRAM,
+SOFTWARE AND SOURCE CODE IS WITH YOU. SHOULD THE OBJECT CODE,
+PROGRAM, SOFTWARE AND SOURCE CODE PROVE DEFECTIVE, YOU ASSUME THE
+ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+</P>
+<P>
+4.0 LIMITATION OF DAMAGES
+
+</P>
+<P>
+      4.1 IN NO EVENT WILL THE COPYRIGHT HOLDER OR ANY OTHER PERSON
+OR ENTITY BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING ANY LOST
+PROFITS, LOST SAVINGS, COMPENSATORY, GENERAL, INCIDENTAL OR
+CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR THE INABILITY TO
+USE THE OBJECT CODE, PROGRAM, SOFTWARE AND SOURCE CODE, EVEN IF THE
+COPYRIGHT HOLDER OR ANY OTHER PERSON OR ENTITY HAS BEEN ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGES, OR FOR ANY CLAIM BY ANY OTHER
+PARTY. 
+
+</P>
+<P>
+5.0 MISCELLANEOUS
+
+</P>
+<P>
+     5.1 The article and paragraph headings appearing in this
+General Software License Agreement have been asserted for the
+purpose of convenience and ready reference. They do not purport to,
+and shall not be deemed to define, limit, or extend the scope or
+intent of the articles and paragraphs to which they pertain.
+
+</P>
+<P>
+     5.2 This General Software License Agreement embodies the
+entire agreement respecting its subject matter. There are no
+promises, terms, conditions or obligations other than those
+expressly set forth herein. Unless otherwise expressly set forth
+herein, this General Software License Agreement supersedes all
+previous communications, representations, agreements, either verbal
+or written, warranties, promises, covenants or undertakings.
+     
+     5.3 This General Software License Agreement shall not be
+modified, altered, amended or supplemented, except in writing
+signed by all parties hereto.
+
+</P>
+<P>
+      5.4 This General Software License Agreement shall be governed
+by the laws of the State of New Jersey.
+
+</P>
+
+
+<H1><A NAME="SEC18" HREF="FreeUDFLib.html#TOC18">Functions</A></H1>
+
+
+
+<H2><A NAME="SEC19" HREF="FreeUDFLib.html#TOC19">Obsolete functions</A></H2>
+
+<P>
+The below functions are now considered <EM>obsolete</EM>. At some point in
+future releases of FreeUDFLib, they will no longer exist.
+
+</P>
+<P>
+When a developer has a convincing argument as to <EM>why</EM> FreeUDFLib
+should continue to include the function, please let me know, and I will
+consider your argument.
+
+</P>
+
+<OL>
+<LI>
+
+<CODE>UserMaintenance</CODE> is <EM>not</EM> a terribly useful function for
+adding and deleting users. It asks IB to start the gsec procedure on the
+server to add users, etc... Instead, the <CODE>IBPassword</CODE> function can
+be used with a direct connection to ISC4.GDB for adding, deleting and
+modifying users.
+</OL>
+
+
+
+<H2><A NAME="SEC20" HREF="FreeUDFLib.html#TOC20">List of functions</A></H2>
+
+<P>
+Below is a list of all available routines. When appropriate, addition
+documentation will be provided. [This section is not complete, as the
+user can tell]
+
+</P>
+
+
+
+<H3><A NAME="SEC21" HREF="FreeUDFLib.html#TOC21">String routines</A></H3>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>Character</B> <I>(var <VAR>Number</VAR>: Integer)</I>
+<DD><A NAME="IDX1"></A>
+Given the provided ordinal value, return the associated character.
+
+<PRE>
+declare external function f_Character
+  integer
+  returns cstring(2)
+  entry_point 'Character' module_name 'FreeUDFLib.dll';
+</PRE>
+
+</DL>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>CRLF</B> <I>()</I>
+<DD><A NAME="IDX2"></A>
+Return the carriage return/line feed string.
+
+<PRE>
+declare external function f_CRLF
+  returns cstring(3)
+  entry_point 'CRLF' module_name 'FreeUDFLib.dll';
+</PRE>
+
+</DL>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>FindNthWord</B> <I>(<VAR>sz</VAR>: PChar; var <VAR>i</VAR>: Integer)</I>
+<DD><A NAME="IDX3"></A>
+A convenient way to find the <VAR>n</VAR>th word in a string; however, if you
+are scanning an entire string to pick out each individual word, it is
+recommended that you use FindWord and FindWordIndex instead.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>FindWord</B> <I>(<VAR>sz</VAR>: PChar; var <VAR>i</VAR>: Integer)</I>
+<DD><A NAME="IDX4"></A>
+Given a starting position, return the first word starting at that
+position.
+<BR>
+NOTE: Strings passed to FindWord start at index 0.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>FindWordIndex</B> <I>(<VAR>sz</VAR>: PChar; var <VAR>i</VAR>: Integer)</I>
+<DD><A NAME="IDX5"></A>
+Given a starting position, return the index of the first word that
+starts on or after that position. This function helps to account for
+whitespace.
+<BR>
+NOTE: Strings passed to FindWordIndex start at index 0.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>GenerateFormattedName</B> <I>(<VAR>szFormatString</VAR>, <VAR>szNamePrefix</VAR>, <VAR>szFirstName</VAR>, <VAR>szMiddleInitial</VAR>, <VAR>szLastName</VAR>, <VAR>szNameSuffix</VAR>: PChar)</I>
+<DD><A NAME="IDX6"></A>
+Given a name prefix (<VAR>szNamePrefix</VAR>), a first name
+(<VAR>szFirstName</VAR>), a middle initial (<VAR>szMiddleInitial</VAR>), a last
+name (<VAR>szLastname</VAR>), and a name suffix (<VAR>sznameSuffix</VAR>),
+construct a formatted name based on the provided format string
+(<VAR>szFormatString</VAR>).
+
+</P>
+<P>
+A format string is constructed as follows:
+
+</P>
+
+<PRE>
+Commands:
+ \&#60;pretext&#62;\&#60;posttext&#62;\P  --&#62; name prefix
+ \&#60;pretext&#62;\&#60;posttext&#62;\F  --&#62; first name
+ \&#60;pretext&#62;\&#60;posttext&#62;\M  --&#62; middle initial
+ \&#60;pretext&#62;\&#60;posttext&#62;\L  --&#62; last name
+ \&#60;pretext&#62;\&#60;posttext&#62;\S  --&#62; name suffix
+ @ - escape character; anything following an &#160;will be printed as a literal
+
+ --options (affect the entire string)--
+ \\\A   --&#62; print only alpha's, i.e. strip string of anything but alpha's
+ \\\9   --&#62; print only alpha's and numeric's, i.e. strip string of
+            everything but alpha's
+ \\\U   --&#62; uppercase string
+</PRE>
+
+<P>
+All other strings are just printed as-is.
+
+</P>
+<P>
+You use "pretext" and "posttext" values when the text preceding or
+succeeding a field depends on the presence of a value in the field.
+An example:
+
+</P>
+
+<PRE>
+  format string = '\\ \P\\ \F\\. \M\\\L\, \\S'
+
+  1. Name Prefix = Mr.
+     First name = John
+     Middle initial = M
+     Last name = Smith
+     Name suffix = III
+       GenerateFormattedName yields Mr. John M. Smith, III
+  2. Same as (1), but
+     Name prefix is blank
+     Middle initial is blank
+     Name suffix is blank
+       GenerateFormattedName yields John Smith
+  3. Same as (1), but
+     Name prefix is blank
+     Name suffix is blank
+       GenerateFormattedName yields John M. Smith
+</PRE>
+
+</DL>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>GenerateSndxIndex</B> <I>(<VAR>sz</VAR>: PChar)</I>
+<DD><A NAME="IDX7"></A>
+Given a string <VAR>sz</VAR>, compute its <EM>soundex</EM> value. The
+documentation for this implementation of soundex can be found at
+<A HREF="http://www.interbase.com/tech/docs/soundex1.html"><TT>InterBase</TT></A>'s web
+site.
+</DL>
+
+</P>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>Left</B> <I>(<VAR>sz</VAR>: PChar; var <VAR>Number</VAR>: Integer)</I>
+<DD><A NAME="IDX8"></A>
+Return the <VAR>Number</VAR> leftmost characters of <VAR>sz</VAR>.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>LineWrap</B> <I>(<VAR>sz</VAR>: PChar; var <VAR>Start</VAR>, <VAR>ColWidth</VAR>: Integer)</I>
+<DD><A NAME="IDX9"></A>
+Given a starting point (<VAR>Start</VAR>) in a string, and a column width,
+<VAR>ColWidth</VAR>, return the portion of <VAR>sz</VAR>, starting at <VAR>Start</VAR>
+that fits in <VAR>ColWidth</VAR> character spaces.
+<BR>
+NOTE: Strings passed to LineWrap start at index 0.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>lrTrim</B> <I>(<VAR>sz</VAR>: PChar)</I>
+<DD><A NAME="IDX10"></A>
+Trim whitespace on both sides of <VAR>sz</VAR>. In other words, trim all
+leading and trailing whitespace.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>lTrim</B> <I>(<VAR>sz</VAR>: PChar)</I>
+<DD><A NAME="IDX11"></A>
+Trim whitespace on the left side of <VAR>sz</VAR>. In other words, trim all
+leading whitespace.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>Mid</B> <I>(<VAR>sz</VAR>: PChar; var Start, <VAR>Number</VAR>: Integer)</I>
+<DD><A NAME="IDX12"></A>
+Return <VAR>Number</VAR> characters from <VAR>sz</VAR>, starting at <VAR>Start</VAR> position.
+<BR>
+NOTE: Strings passed to Mid start at index 0.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>PadLeft</B> <I>(<VAR>sz</VAR>, <VAR>szPadString</VAR>: PChar; var <VAR>Len</VAR>: Integer)</I>
+<DD><A NAME="IDX13"></A>
+Pad the left side of <VAR>sz</VAR> with <VAR>szPadString</VAR> for <VAR>Len</VAR> characters.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>PadRight</B> <I>(<VAR>sz</VAR>, <VAR>szPadString</VAR>: PChar; var <VAR>Len</VAR>: Integer)</I>
+<DD><A NAME="IDX14"></A>
+Pad the right side of <VAR>sz</VAR> with <VAR>szPadString</VAR> for <VAR>Len</VAR> characters.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>ProperCase</B> <I>(<VAR>sz</VAR>: PChar)</I>
+<DD><A NAME="IDX15"></A>
+Proper-case <VAR>sz</VAR>. That is, take each word, and ensure that the first
+letter of each word starts with an uppercase, and the rest of the word
+is in lower-case.
+
+</P>
+<P>
+This function is convenient, but it is not, in general, terribly
+useful. After all, it won't ProperCase O'Connor correctly, or McNamara.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>Right</B> <I>(<VAR>sz</VAR>: PChar; var <VAR>Number</VAR>: Integer)</I>
+<DD><A NAME="IDX16"></A>
+Return the <VAR>Number</VAR> rightmost characters from <VAR>sz</VAR>.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>rTrim</B> <I>(<VAR>sz</VAR>: PChar)</I>
+<DD><A NAME="IDX17"></A>
+Trim the right side of <VAR>sz</VAR> of all whitespace. In other words, trim
+all trailing whitespace.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>StringLength</B> <I>(<VAR>sz</VAR>: PChar)</I>
+<DD><A NAME="IDX18"></A>
+Return the <CODE>StrLen</CODE> of <VAR>sz</VAR>.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>StripString</B> <I>(<VAR>sz</VAR>, <VAR>szCharsToStrip</VAR>: PChar)</I>
+<DD><A NAME="IDX19"></A>
+Strip <VAR>sz</VAR> of all characters listed in <VAR>szCharsToStrip</VAR>.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>SubStr</B> <I>(<VAR>szSubStr</VAR>, <VAR>szStr</VAR>: PChar)</I>
+<DD><A NAME="IDX20"></A>
+Look for <VAR>szSubStr</VAR> in <VAR>szStr</VAR>, and return the index. If the
+string is not found, SubStr returns -1.
+<BR>
+NOTE: Strings passed to SubStr start at index 0.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>ValidateNameFormat</B> <I>(<VAR>szFormatString</VAR>: PChar)</I>
+<DD><A NAME="IDX21"></A>
+Determine if the provided format string (as described above) is valid.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>ValidateRegularExpression</B> <I>(<VAR>sz</VAR>: PChar)</I>
+<DD><A NAME="IDX22"></A>
+Given a string <VAR>sz</VAR>, determine if it is a valid regular expression.
+
+</P>
+<P>
+NOTE: This function is not yet implemented.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>ValidateStringInRE(<VAR>sz</VAR>,</B> <I><VAR>re</VAR>: PChar)</I>
+<DD><A NAME="IDX23"></A>
+Given a string <VAR>sz</VAR>, and a valid regular expression <VAR>re</VAR>,
+determine if the string <VAR>sz</VAR> is in the language specified by
+<VAR>re</VAR>.
+
+</P>
+<P>
+NOTE: This function is not yet implemented.
+</DL>
+
+</P>
+
+
+<H3><A NAME="SEC22" HREF="FreeUDFLib.html#TOC22">Miscellaneous routines</A></H3>
+
+<P>
+<DL>
+<DT><U>Function:</U> CloseDebuggerOutput: <B>Integer</B>
+<DD><A NAME="IDX24"></A>
+Used in conjunction with <CODE>SetDebuggerOutput</CODE>, and <CODE>Debug</CODE>.
+This function closes whatever the currently set output handle is.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>Debug</B> <I>(<VAR>szDebuggerOutput</VAR>: PChar)</I>
+<DD><A NAME="IDX25"></A>
+Used in conjunction with <CODE>SetDebuggerOutput</CODE> and
+<CODE>CloseDebuggerOutput</CODE>. This function writes a string to the
+currently set debugger handle.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>EvaluateCycleExpression</B> <I>(<VAR>szCycleExpression</VAR>: PChar; var <VAR>ExprStart</VAR>: Integer; <VAR>OldDate</VAR>, <VAR>NewDate</VAR>: PISC_QUAD; var <VAR>Amount</VAR>: Double)</I>
+<DD><A NAME="IDX26"></A>
+A cycle expression is a prefix notation expression evaluator that takes
+as input a possible <VAR>OldDate</VAR>, <VAR>NewDate</VAR> and dollar
+<VAR>Amount</VAR>.
+
+</P>
+<P>
+A billing expression is
+
+</P>
+
+<UL>
+<LI>
+
+The question, 'Given X bill cycle (in months), is AGE mod X 0?'
+<BR>
+This question is expressed simply by using a valid integer. For example, in semi-pseudo code
+
+
+<PRE>
+  EvaluateCycleExpression('3', 0, '1/1/98', '4/1/98', 0) = 1;
+  EvaluateCycleExpression('3', 0, '1/1/98', '3/1/98', 0) = 0;
+</PRE>
+
+<LI>
+
+The question, 'Is the age in months of the file &#62;= X?'
+<BR>
+This question is expressed simply by typing a '&#62;', followed by a valid
+integer. For example, in semi-pseudo code:
+
+
+<PRE>
+  EvaluateCycleExpression('&#62;6', 0, '1/1/98', '8/1/98', 0) = 1;
+  EvaluateCycleExpression('3', 0, '1/1/98', '3/1/98', 0) = 0;
+</PRE>
+
+<LI>
+
+The question, 'Is the dollar value &#62;= X?'
+<BR>
+This question is expressed simply by typing a '$', followed by a valid
+float. For example, in semi-pseudo code:
+
+
+<PRE>
+  EvaluateCycleExpression('$1000', 0, '1/1/98', '8/1/98', 3000) = 1;
+  EvaluateCycleExpression('$1000', 0, '1/1/98', '3/1/98', 0) = 0;
+</PRE>
+
+<LI>
+
+A valid expression is:
+
+
+<PRE>
+  OR &#60;valid expression&#62; &#60;valid expression&#62;
+</PRE>
+
+This allows you to "or" two expressions together.
+
+<LI>
+
+A valid expression is:
+
+
+<PRE>
+  AND &#60;valid expression&#62; &#60;valid expression&#62;
+</PRE>
+
+This allows you to "and" two expressions together.
+
+<LI>
+
+
+<PRE>
+  NOT &#60;valid expression&#62;
+</PRE>
+
+This allows you to negate the result of an expression.
+</UL>
+
+</DL>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>EvaluateExpression(<VAR>szExpr</VAR>,</B> <I><VAR>szSymbols</VAR>: PChar)</I>
+<DD><A NAME="IDX27"></A>
+<CODE>EvaluteExpression</CODE> is a fully featured expression evaluator. It
+allows you to use typical parenthesized syntax to compare values of
+symbols passed in a symbol list with constants.
+
+</P>
+<P>
+The full syntaxes of an expression and of a symbol list are listed in
+<TT>`ExprParser.y'</TT>, and <TT>`Symbols.l'</TT>, respectively.
+
+</P>
+<P>
+This simple example of an expression should be enough to get you
+started, though:
+
+</P>
+
+<PRE>
+  EvaluateExpression(
+    '(MyDate={1/1/98}) and (HelloWorld='hello') and (A=B + 9)'
+    'MyDate={1/1/98} HelloWorld='hello' A=18 B=9') = 1
+</PRE>
+
+</DL>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>IBTempPath</B> <I>()</I>
+<DD><A NAME="IDX28"></A>
+Return what InterBase currently thinks the temporary path is.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>SetDebuggerOutput</B> <I>(<VAR>szOutputFile</VAR>: PChar)</I>
+<DD><A NAME="IDX29"></A>
+Used in conjuction with <CODE>Debug</CODE> and
+<CODE>CloseDebuggerOutput</CODE>. This function sets the current output to a
+file, or to <CODE>STDOUT</CODE>. To set the debugger output to a file, just
+pass a file name in. The file name <CODE>STDOUT</CODE> is a special file name
+that tells <CODE>SetDebuggerOutput</CODE> to set the output to the standard output.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>ValidateCycleExpression</B> <I>(<VAR>szCycleExpression</VAR>: PChar; var <VAR>ExprStart</VAR>: Integer)</I>
+<DD><A NAME="IDX30"></A>
+Given a billing cycle-style expression as described in
+<CODE>EvaluateCycleExpression</CODE>, determine if the expression is
+valid.
+</DL>
+
+</P>
+
+
+<H3><A NAME="SEC23" HREF="FreeUDFLib.html#TOC23">Blob routines</A></H3>
+
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>BlobMaxSegmentLength</B> <I>(<VAR>Blob</VAR>: PBlob)</I>
+<DD><A NAME="IDX31"></A>
+Given a <VAR>Blob</VAR>, return the maximum segment size of the blob.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>BlobSegmentCount</B> <I>(<VAR>Blob</VAR>: PBlob)</I>
+<DD><A NAME="IDX32"></A>
+Given a <VAR>Blob</VAR>, return the number of segments used to store the
+blob.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>BlobSize</B> <I>(<VAR>Blob</VAR>: PBlob)</I>
+<DD><A NAME="IDX33"></A>
+Given a <VAR>Blob</VAR>, return the total size of the blob.
+</DL>
+
+</P>
+<P>
+The following functions allow you to treat blobs as
+pseudo-strings. These functions have limited utility and should only be
+used when you are confident that your blob is not overly large.
+
+</P>
+<P>
+This in mind, if you are using these functions, you might want to
+consider exactly <EM>why</EM> you need these functions, and you might
+possibly be better served by replacing your blobs with large varchars.
+<DL>
+<DT><U>Function:</U> PChar <B>BlobAsPChar</B> <I>(<VAR>Blob</VAR>: PBlob)</I>
+<DD><A NAME="IDX34"></A>
+Return the passed blob as a string.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>BlobLeft</B> <I>(<VAR>Blob</VAR>: PBlob; var <VAR>Number</VAR>: Integer)</I>
+<DD><A NAME="IDX35"></A>
+Return the <VAR>Number</VAR> leftmost characters of <VAR>Blob</VAR>.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>BlobLine</B> <I>(<VAR>Blob</VAR>: PBlob; var <VAR>Number</VAR>: Integer)</I>
+<DD><A NAME="IDX36"></A>
+Return the <VAR>Number</VAR>'th line of a blob. The first line of a blob is 0.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>BlobMid</B> <I>(<VAR>Blob</VAR>: PBlob; var <VAR>Start</VAR>, <VAR>Number</VAR>: Integer)</I>
+<DD><A NAME="IDX37"></A>
+Return <VAR>Number</VAR> characters from a blob starting at the zero-index
+position <VAR>Start</VAR>.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>BlobRight</B> <I>(<VAR>Blob</VAR>: PBlob; var <VAR>Number</VAR>: Integer)</I>
+<DD><A NAME="IDX38"></A>
+Return the <VAR>Number</VAR> right-most characters from <VAR>Blob</VAR>.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PBlob <B>StrBlob</B> <I>(<VAR>sz</VAR>: PChar; <VAR>Blob</VAR>: PBlob)</I>
+<DD><A NAME="IDX39"></A>
+Given a string, return it as a blob.
+</DL>
+
+</P>
+
+
+<H3><A NAME="SEC24" HREF="FreeUDFLib.html#TOC24">Math routines</A></H3>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>DollarVal</B> <I>(var <VAR>Value</VAR>: Double)</I>
+<DD><A NAME="IDX40"></A>
+Format the passed <VAR>Value</VAR> as a dollar-ish looking string.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Double <B>DoubleAbs</B> <I>(var <VAR>Value</VAR>: Double)</I>
+<DD><A NAME="IDX41"></A>
+Return the absolute value of <VAR>Value</VAR>.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>FixedPoint</B> <I>(var <VAR>Value</VAR>: Double; var <VAR>DecimalPlaces</VAR>: Integer)</I>
+<DD><A NAME="IDX42"></A>
+Format the passed <VAR>Value</VAR> as a fixed-point string with
+<VAR>DecimalPlaces</VAR> number decimal places.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>IntegerAbs</B> <I>(var <VAR>Value</VAR>: Integer)</I>
+<DD><A NAME="IDX43"></A>
+Return the absolute value of <VAR>Value</VAR>.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>Modulo</B> <I>(var <VAR>Numerator</VAR>, <VAR>Denominator</VAR>: Integer)</I>
+<DD><A NAME="IDX44"></A>
+Divide <VAR>Numerator</VAR> by <VAR>Denominator</VAR> and return the remainder.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>IsDivisibleBy</B> <I>(var <VAR>Numerator</VAR>, <VAR>Denominator</VAR>: Integer)</I>
+<DD><A NAME="IDX45"></A>
+Return 1 if <VAR>Numerator</VAR> is evenly divisible by <VAR>Denominator</VAR>,
+otherwise return 0.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Double <B>RoundFloat</B> <I>(var <VAR>Value</VAR>, <VAR>RoundToNearest</VAR>: Double)</I>
+<DD><A NAME="IDX46"></A>
+Attempt to round the passed <VAR>Value</VAR> to the <VAR>RoundToNearest</VAR>
+fraction.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>Truncate</B> <I>(var <VAR>Value</VAR>: Double)</I>
+<DD><A NAME="IDX47"></A>
+Truncate <VAR>Value</VAR> to an integer value.
+</DL>
+
+</P>
+
+
+<H3><A NAME="SEC25" HREF="FreeUDFLib.html#TOC25">Date/Time routines</A></H3>
+
+<P>
+<DL>
+<DT><U>Function:</U> PISC_QUAD <B>AddMonth</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD; var <VAR>months_to_add</VAR>: Integer)</I>
+<DD><A NAME="IDX48"></A>
+Add <VAR>months_to_add</VAR> months to <VAR>ib_date</VAR>.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PISC_QUAD <B>AddYear</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD; var <VAR>years_to_add</VAR>: Integer)</I>
+<DD><A NAME="IDX49"></A>
+Add <VAR>years_to_add</VAR> years to <VAR>ib_date</VAR>.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>AgeInDays</B> <I>(<VAR>ib_date</VAR>, <VAR>ib_date_reference</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX50"></A>
+Using <VAR>ib_date_reference</VAR> as a reference point, compute the age in
+days of <VAR>ib_date</VAR>. Typically, <VAR>ib_date_reference</VAR> will be 'Today'.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>AgeInDaysThreshold</B> <I>(<VAR>ib_date</VAR>, <VAR>ib_date_reference</VAR>: PISC_QUAD; var <VAR>Min</VAR>, <VAR>UseMin</VAR>, <VAR>Max</VAR>, <VAR>UseMax</VAR>: Integer)</I>
+<DD><A NAME="IDX51"></A>
+Using <VAR>ib_date_reference</VAR> as a reference point, compute the age in
+days of <VAR>ib_date</VAR>. Typically, <VAR>ib_date_reference</VAR> will be
+'Today'.
+
+</P>
+<P>
+When <VAR>UseMin</VAR> is 1, then the minimum age returned is <VAR>Min</VAR>. When
+<VAR>UseMax</VAR> is 1, then the maximum age returned is <VAR>Max</VAR>. Calling
+this function with both <VAR>UseMin</VAR> and <VAR>UseMax</VAR> set to 0, is the
+same as calling its sister function above.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>AgeInMonths</B> <I>(<VAR>ib_date</VAR>, <VAR>ib_date_reference</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX52"></A>
+Using <VAR>ib_date_reference</VAR> as a reference point, compute the age in
+months of <VAR>ib_date</VAR>. Typically, <VAR>ib_date_reference</VAR> will be
+'Today'.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>AgeInMonthsThreshold</B> <I>(<VAR>ib_date</VAR>, <VAR>ib_date_reference</VAR>: PISC_QUAD; var <VAR>Min</VAR>, <VAR>UseMin</VAR>, <VAR>Max</VAR>, <VAR>UseMax</VAR>: Integer)</I>
+<DD><A NAME="IDX53"></A>
+Using <VAR>ib_date_reference</VAR> as a reference point, compute the age in
+months of <VAR>ib_date</VAR>. Typically, <VAR>ib_date_reference</VAR> will be
+'Today'.
+
+</P>
+<P>
+When <VAR>UseMin</VAR> is 1, then the minimum age returned is <VAR>Min</VAR>. When
+<VAR>UseMax</VAR> is 1, then the maximum age returned is <VAR>Max</VAR>. Calling
+this function with both <VAR>UseMin</VAR> and <VAR>UseMax</VAR> set to 0, is the
+same as calling its sister function above.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>AgeInWeeks</B> <I>(<VAR>ib_date</VAR>, <VAR>ib_date_reference</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX54"></A>
+Using <VAR>ib_date_reference</VAR> as a reference point, compute the age in
+weeks of <VAR>ib_date</VAR>. Typically, <VAR>ib_date_reference</VAR> will be
+'Today'.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>AgeInWeeksThreshold</B> <I>(<VAR>ib_date</VAR>, <VAR>ib_date_reference</VAR>: PISC_QUAD; var <VAR>Min</VAR>, <VAR>UseMin</VAR>, <VAR>Max</VAR>, <VAR>UseMax</VAR>: Integer)</I>
+<DD><A NAME="IDX55"></A>
+Using <VAR>ib_date_reference</VAR> as a reference point, compute the age in
+weeks of <VAR>ib_date</VAR>. Typically, <VAR>ib_date_reference</VAR> will be
+'Today'.
+
+</P>
+<P>
+When <VAR>UseMin</VAR> is 1, then the minimum age returned is <VAR>Min</VAR>. When
+<VAR>UseMax</VAR> is 1, then the maximum age returned is <VAR>Max</VAR>. Calling
+this function with both <VAR>UseMin</VAR> and <VAR>UseMax</VAR> set to 0, is the
+same as calling its sister function above.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>CDOWLong</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX56"></A>
+Return the long string version of the day of the day of the week. For
+example,
+
+</P>
+
+<PRE>
+  CDOWLong('1/1/98') = 'Thursday'
+</PRE>
+
+</DL>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>CDOWShort</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX57"></A>
+Return the short string version of the day of the day of the week. For
+example,
+
+</P>
+
+<PRE>
+  CDOWShort('1/1/98') = 'Thu'
+</PRE>
+
+</DL>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>CMonthLong</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX58"></A>
+Return the long string version of the month. For
+example,
+
+</P>
+
+<PRE>
+  CMonthLong('1/1/98') = 'January'
+</PRE>
+
+</DL>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>CMonthShort</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX59"></A>
+Return the short string version of the month. For
+example,
+
+</P>
+
+<PRE>
+  CMonthShort('1/1/98') = 'Jan'
+</PRE>
+
+</DL>
+
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>DayOfMonth</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX60"></A>
+Return the integer day of the month.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>DayOfWeek</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX61"></A>
+Return the integer day of the week.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>DayOfYear</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX62"></A>
+Return the integer day of the year.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>IsLeapYear</B> <I>(<VAR>year</VAR>: Integer)</I>
+<DD><A NAME="IDX63"></A>
+Is the passed year a leap year?
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PISC_QUAD <B>MaxDate</B> <I>(<VAR>ib_d1</VAR>, <VAR>ib_d2</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX64"></A>
+Return the larger of the two dates.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PISC_QUAD <B>MinDate</B> <I>(<VAR>ib_d1</VAR>, <VAR>ib_d2</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX65"></A>
+Return the smaller of the two dates.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>Month</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX66"></A>
+Return the integer month of the passed date.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>Quarter</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX67"></A>
+Return the integer quarter of the passed date.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PISC_QUAD <B>StripDate</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX68"></A>
+Set the date portion of the passed date to the equivalent of '0',
+leaving just the time portion.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PISC_QUAD <B>StripTime</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX69"></A>
+Set the time portion of the passed date to the equivalent of '0',
+leaving just the date portion.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>WeekOfYear</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX70"></A>
+Return the integer week of the passed date.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>WOY</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX71"></A>
+Return a string which concatenates the year of the date with the integer
+week of the year.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>Year</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX72"></A>
+Return the integer year of the passed date.
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>YearOfYear</B> <I>(<VAR>ib_date</VAR>: PISC_QUAD)</I>
+<DD><A NAME="IDX73"></A>
+Return the integer year of the date, but compute as if the WeekOfYear
+was being computed.
+</DL>
+
+</P>
+
+
+
+<H3><A NAME="SEC26" HREF="FreeUDFLib.html#TOC26">User maintenance routines</A></H3>
+
+<P>
+<DL>
+<DT><U>Function:</U> PChar <B>IBPassword</B> <I>(<VAR>pInStr</VAR><VAR></VAR>: PChar)</I>
+<DD><A NAME="IDX74"></A>
+Given an unencrypted string, return the encrypted string as InterBase
+encrypts it for InterBase passwords.
+
+</P>
+<P>
+With InterBase version 5.0, this function is effectively unnecessary,
+since version 5.0 now has the API calls isc_add_user, etc...
+</DL>
+
+</P>
+<P>
+<DL>
+<DT><U>Function:</U> Integer <B>UserMaintenance(<VAR>username</VAR>,</B> <I><VAR>password</VAR>, <VAR>sysuname</VAR>, <VAR>syspword</VAR>, <VAR>action</VAR><VAR></VAR>: PChar)</I>
+<DD><A NAME="IDX75"></A>
+NOTE: This function is obsolete.
+
+</P>
+<P>
+This function allows the user to invoke <TT>`gsec'</TT> on the server, thus
+allowing a remote SYSDBA to manage users without using the InterBase
+Server Manager.
+</DL>
+
+</P>
+
+
+<H1><A NAME="SEC27" HREF="FreeUDFLib.html#TOC27">About the author</A></H1>
+
+<P>
+Gregory Deatz is a senior programmer/analyst at Hoagland, Longo,
+Moran, Dunst &#38; Doukas, a law firm in New Brunswick, NJ. His current
+focus is in legal billing and case management applications. He is the
+author of FreeUDFLib, a free UDF library for InterBase written entirely
+in Delphi, and FreeIBComponents, a set of native InterBase components
+for use with Delphi 3.0. Both of these tools can be found at at
+<A HREF="http://www.interbase.com/downloads"><TT>InterBase Corporation</TT></A>. He can
+be reached via e-mail at <A HREF="mailto:gdeatz@hlmdd.com"><TT>gdeatz@hlmdd.com</TT></A>, by voice at (732)
+545-4717, or by fax at (732) 545-4579.
+
+</P>
+<P><HR><P>
+This document was generated on 6 August 1998 using the
+<A HREF="http://wwwcn.cern.ch/dci/texi2html/">texi2html</A>
+translator version 1.51a.</P>
+</BODY>
+</HTML>

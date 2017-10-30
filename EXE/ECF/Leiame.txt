@@ -1,0 +1,43 @@
+                        ==========
+                        LEIAME.TXT
+                        ==========
+   
+Salve os arquivos:
+
+-> BemaFI32.dll
+-> BemaFI32.ini
+-> BemaMFD.dll
+-> DAO2535.tlb
+-> DAO350.dll
+-> MSJET32.dll
+
+No  diretório  de sistema de seu Windows. Se for Windows 95,
+98 ou  ME  salve  em "\Windows\System". Se for Windows 2000,
+NT ou XP salve em "\WinNT\System32"
+
+Caso você utilize a função Bematech_FI_RelatorioSintegraMFD,
+que  gera  os  registros do Sintegra nas impressoras fiscais
+MFD  MP-2000 TH FI e  MP-6000 TH FI (somente),  é necessário
+que os arquivos DAO350.DLL e MSJET35.DLL sejam registrados.
+Para isso, execute: 
+
+REGSVR32 /S DAO350.DLL 
+REGSVR32 /S MSJET35.DLL 
+
+O arquivo BEMAFI32.CHM é o arquivo de ajuda da BEMAFI32.DLL.
+Basta dar um duplo-clique para abri-lo. Neste arquivo, você
+encontrará todas as explicações referente as funções da DLL,
+além de exemplos em Visual Basic e Delphi.
+
+Para esclarecer suas dúvidas em relação ao uso da DLL, você
+poderá  entrar  em  contato  com o nosso suporte técnico no 
+telefone:
+
+0800 644 2362
+
+ou por e-mail:
+
+suporte@bematech.com.br
+
+-------------------------------------------------
+BEMATECH - NOSSO NEGÓCIO É AUTOMAÇÃO COMERCIAL!!!

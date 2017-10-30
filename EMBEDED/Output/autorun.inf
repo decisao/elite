@@ -1,0 +1,6 @@
+[AutoRun]
+open=setup.exe
+icon=mainicon.ico, 0
+
+[CONFIG]
+SKU=ARCH

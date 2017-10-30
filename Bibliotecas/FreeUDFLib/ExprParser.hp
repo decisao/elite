@@ -1,0 +1,38 @@
+type	YYtype = (B, D, N, S);
+type
+	YYSTYPE = record
+	case YYtype of
+
+  B: (bvalue: Boolean);
+  D: (dvalue: TDateTime);
+  N: (nvalue: TExprNumber);
+  S: (svalue: array[0..yylmax] of Char);
+	end;
+const _NOT	= 257;
+const _AND	= 258;
+const _OR	= 259;
+const _XOR	= 260;
+const _NOR	= 261;
+const _NAND	= 262;
+const _EQ	= 263;
+const _NEQ	= 264;
+const _LEQ	= 265;
+const _GEQ	= 266;
+const _GT	= 267;
+const _LT	= 268;
+const _STARTS_WITH	= 269;
+const _CONTAINS	= 270;
+const _PLUS	= 271;
+const _MINUS	= 272;
+const _TIMES	= 273;
+const _DIV	= 274;
+const _DIVIDE	= 275;
+const _MOD	= 276;
+const _TRUE	= 277;
+const _FALSE	= 278;
+const _DATE	= 279;
+const _NUM	= 280;
+const _DATESPEC	= 281;
+const _STRING	= 282;
+
+

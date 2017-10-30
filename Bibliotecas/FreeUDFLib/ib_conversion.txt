@@ -1,0 +1,140 @@
+The following two files: ibase.pas and ib_externals.pas
+comprise a "complete" Delphi port of ibase.h.
+
+I do not claim that this file works, except that it has behaved well
+for me thus far (although so far, I have used the ibase API only
+lightly).
+
+---
+Below are some of my comments and questions (Please feel free to send
+you comments, suggestions, questions to deatz@cs.rutgers.edu)
+
+---
+I "mangled" the names of types a bit to fit the Delphi convention for
+prefixing types with "T" and pointers with "P". I think this makes the
+file easier to read.
+---
+The only piece of the file which I have not implemented is the
+following "#define"
+
+...
+#define blr_word(n) ((n) % 256), ((n) / 256)
+...
+
+Firstly, when is/should this macro be used, and secondly, how can I
+implement this in Pascal?
+
+---
+Some of the functions, like isc_event_block use C's feature of
+being able to specify an undetermined number of arguments. Since
+Delphi does not directly support this, I used Delphi's unbounded array
+argument type, like
+
+function  isc_event_block       (event_buffer               : PPChar;
+				 result_buffer              : PPChar;
+				 id_count                   : UShort;
+                                 event_list                 : array of PChar): ISC_LONG;
+                                cdecl; external IBASE_DLL;
+
+To be quite honest, I won't be using this function for quite a while,
+so it was only important that it compile. Does this work? Do you have
+any other suggestions?
+---
+I don't know what these functions do (i.e., I could not readily
+ locate any documentation on them--please forgive any omisions, errors):
+
+  isc_array_gen_sdl
+  isc_create_database
+  isc_dsql_fetch2
+  isc_modify_dpb
+  isc_free
+  isc_get_slice
+  isc_put_slice
+  isc_transact_request
+  isc_compile_request
+  isc_compile_request2
+  isc_ddl
+  isc_receive
+  isc_reconnect_transaction
+  isc_request_info
+  isc_seek_blob
+  isc_send
+  isc_start_and_send
+  isc_start_request
+  isc_unwind_request
+  isc_close
+  isc_declare
+  isc_describe
+  isc_describe_bind
+  isc_execute
+  isc_execute_immediate
+  isc_fetch
+  isc_open
+  isc_prepare
+  isc_dsql_execute_m
+  isc_dsql_execute2_m
+  isc_dsql_execute_immediate_m
+  isc_dsql_exec_immed3_m
+  isc_dsql_fetch_m
+  isc_dsql_fetch2_m
+  isc_dsql_insert_m
+  isc_dsql_prepare_m
+  isc_dsql_release
+  isc_embed_dsql_close
+  isc_embed_dsql_declare
+  isc_embed_dsql_describe
+  isc_embed_dsql_describe_bind
+  isc_embed_dsql_execute
+  isc_embed_dsql_execute2
+  isc_embed_dsql_execute_immed
+  isc_embed_dsql_fetch
+  isc_embed_dsql_fetch2
+  isc_embed_sql_open
+  isc_embed_sql_open2
+  isc_embed_sql_insert
+  isc_embed_sql_prepare
+  isc_embed_sql_release
+  getb*
+  putb*
+  putbx*
+  BLOB_open
+  BLOB_put
+  BLOB_close
+  BLOB_get
+  BLOB_display
+  BLOB_dump
+  BLOB_edit
+  BLOB_load
+  BLOB_text_dump
+  BLOB_text_load
+  Bopen
+  Bopen2
+  isc_ftof
+  isc_print_blr
+  isc_set_debug
+  isc_qtoq
+  isc_vtof
+  isc_vtov
+  isc_version
+  isc_attach_service
+  isc_detach_service
+  isc_query_service
+  isc_compile_map
+  isc_compile_menu
+  isc_compile_sub_map
+  isc_create_window
+  isc_delete_window
+  isc_drive_form
+  isc_drive_menu
+  isc_form_delete
+  isc_form_fetch
+  isc_form_insert
+  isc_get_entree
+  isc_initialize_menu
+  isc_menu
+  isc_load_form
+  isc_pop_window
+  isc_put_entree
+  isc_reset_form
+  isc_suspend_window
+ 

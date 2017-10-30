@@ -1,0 +1,57 @@
+unit dataSisconfig;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Db, IBCustomDataSet, IBQuery, IBDatabase;
+
+type
+  TdmoSisconfig = class(TDataModule)
+    traComum: TIBTransaction;
+    qryGRUPO_SER: TIBQuery;
+    qryMEDIDA_SER: TIBQuery;
+    dsrGRUPO_SER: TDataSource;
+    dsrMEDIDA_SER: TDataSource;
+    qryEmpresa: TIBQuery;
+    dsrEmpresa: TDataSource;
+    qryCliente: TIBQuery;
+    dsrCliente: TDataSource;
+    qryCCD: TIBQuery;
+    dsrCCD: TDataSource;
+    qryCVC: TIBQuery;
+    dsrCVC: TDataSource;
+    qryDOCvista: TIBQuery;
+    dsrDOCvista: TDataSource;
+    qryDOCprazo: TIBQuery;
+    dsrDOCprazo: TDataSource;
+    qryImpNota: TIBQuery;
+    dsrImpNota: TDataSource;
+    qryOSaberta: TIBQuery;
+    dsrOSaberta: TDataSource;
+    qryOSfechada: TIBQuery;
+    dsrOSfechada: TDataSource;
+    qryOSaberta2: TIBQuery;
+    dsrOSaberta2: TDataSource;
+    qryRecibo: TIBQuery;
+    dsrRecibo: TDataSource;
+    qryNatuoper: TIBQuery;
+    dsrNatuoper: TDataSource;
+    qryNatuoperC: TIBQuery;
+    dsrNatuoperC: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmoSisconfig: TdmoSisconfig;
+
+implementation
+
+uses sisconfig;
+
+{$R *.DFM}
+
+end.
